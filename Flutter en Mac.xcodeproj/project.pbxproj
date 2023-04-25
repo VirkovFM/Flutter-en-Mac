@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94038EB29F7701700D91507 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94038EA29F7701700D91507 /* UserView.swift */; };
 		F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */; };
 		F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C3E29F743550040FA4D /* ContentView.swift */; };
 		F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16E2C4029F743560040FA4D /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94038EA29F7701700D91507 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		F16E2C3929F743550040FA4D /* Flutter en Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flutter en Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flutter_en_MacApp.swift; sourceTree = "<group>"; };
 		F16E2C3E29F743550040FA4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				F1D329FA29F7496000536D77 /* PurchaseView.swift */,
+				C94038EA29F7701700D91507 /* UserView.swift */,
 				F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */,
 				F16E2C3E29F743550040FA4D /* ContentView.swift */,
 				F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */,
@@ -145,6 +148,7 @@
 			files = (
 				F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */,
 				F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */,
+				C94038EB29F7701700D91507 /* UserView.swift in Sources */,
 				F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */,
 				F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */,
 			);

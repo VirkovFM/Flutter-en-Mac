@@ -19,7 +19,7 @@ struct MenuAdmin: View {
                     
                     NavigationLink(destination: MenuAdmin(), label: {Text("SALES")}).padding().buttonStyle(FilledButtonStyle())
                     
-                    NavigationLink(destination: MenuAdmin(), label: {Text("PURCHASE")}).padding().buttonStyle(FilledButtonStyle())
+                    NavigationLink(destination: PurchaseView(), label: {Text("PURCHASE")}).padding().buttonStyle(FilledButtonStyle())
                 })
         }
     }
