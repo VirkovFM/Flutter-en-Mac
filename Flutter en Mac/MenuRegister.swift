@@ -9,7 +9,16 @@ import SwiftUI
 
 struct MenuRegister: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView{
+            Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
+                VStack{
+                    NavigationLink(destination: RegisterView(), label: {Text("USER")}).padding().buttonStyle(FilledButtonStyle())
+                    
+                    NavigationLink(destination: ProductView(), label: {Text("PRODUCT")}).padding().buttonStyle(FilledButtonStyle())
+                    
+                })
+        }
     }
 }
 
