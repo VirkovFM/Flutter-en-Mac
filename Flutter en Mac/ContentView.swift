@@ -18,7 +18,7 @@ struct ContentView: View {
             NavigationView{
                 Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
                     VStack{
-                        Text("Login")
+                        Text("Aiba").font(.largeTitle).padding()
                         Form{
                             TextField("User", text: $email)
                             SecureField("Password", text: $contrasena)
@@ -36,10 +36,10 @@ struct ContentView: View {
                         }.padding().buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlerta){*/
                         NavigationLink(destination: MenuAdmin(), label: {Text("LOGIN")}).padding().buttonStyle(FilledButtonStyle())
 
-                        NavigationLink(destination: MenuAdmin(), label: {Text("REGISTER")}).padding().buttonStyle(FilledButtonStyle())
+                        NavigationLink(destination: MenuAdmin(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
                         
                         
-                    }.foregroundColor(.white).font(.system(size: 30))) // #393939
+                    }.foregroundColor(.white)) // #393939
                 
                     /*Button("REGISTER"){
                         
@@ -58,10 +58,11 @@ struct ContentView: View {
 struct FilledButtonStyle: ButtonStyle{
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .padding()
             .background(configuration.isPressed ? Color.blue: Color(#colorLiteral(red: 0.596, green: 0.694, blue: 0.769, alpha: 1))) // #98b1c4)
             .foregroundColor(.white)
-            .cornerRadius(10)
-            .font(.system(size: 32))
+            .clipShape(Capsule())
+            //.font(.system(size: 32))
         
 
     }
