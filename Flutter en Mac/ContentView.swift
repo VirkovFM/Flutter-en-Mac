@@ -20,8 +20,12 @@ struct ContentView: View {
                     VStack{
                         Text("Aiba").font(.largeTitle).padding()
                         Form{
-                            TextField("User", text: $email)
-                            SecureField("Password", text: $contrasena)
+                            Section{
+                                TextField("User", text: $email)
+                            }
+                            Section{
+                                SecureField("Password", text: $contrasena)
+                            }
                         }.padding().scrollContentBackground(.hidden)
                         
                         /*Button("LOGIN"){
