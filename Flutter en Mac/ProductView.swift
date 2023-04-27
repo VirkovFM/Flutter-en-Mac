@@ -1,13 +1,13 @@
 //
-//  UserView.swift
+//  ProductView.swift
 //  Flutter en Mac
 //
-//  Created by ISSC_612_2023 on 24/04/23.
+//  Created by ISSC_611_2023 on 26/04/23.
 //
 
 import SwiftUI
 
-struct UserView: View {
+struct ProductView: View {
     
     @State private var Id = ""
     @State private var name = ""
@@ -58,8 +58,8 @@ struct UserView: View {
     }
 }
 
-struct UserView_Previews: PreviewProvider {
+struct ProductView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView()
+        ProductView()
     }
 }

@@ -15,9 +15,9 @@ struct MenuAdmin: View {
         NavigationView{
             Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
                 VStack{
-                    NavigationLink(destination: MenuAdmin(), label: {Text("REGISTER")}).padding().buttonStyle(FilledButtonStyle())
+                    NavigationLink(destination: ContentView(), label: {Text("REGISTER")}).padding().buttonStyle(FilledButtonStyle())
                     
-                    NavigationLink(destination: MenuAdmin(), label: {Text("SALES")}).padding().buttonStyle(FilledButtonStyle())
+                    NavigationLink(destination: ContentView(), label: {Text("SALES")}).padding().buttonStyle(FilledButtonStyle())
                     
                     NavigationLink(destination: PurchaseView(), label: {Text("PURCHASE")}).padding().buttonStyle(FilledButtonStyle())
                 })

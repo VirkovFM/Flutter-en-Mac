@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C94038EB29F7701700D91507 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94038EA29F7701700D91507 /* UserView.swift */; };
+		F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9829FA049300CF8B3E /* MenuRegister.swift */; };
+		F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9A29FA053C00CF8B3E /* RegisterView.swift */; };
+		F1483A9D29FA059200CF8B3E /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9C29FA059200CF8B3E /* ProductView.swift */; };
+		F1483A9F29FA05A400CF8B3E /* SalesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9E29FA05A400CF8B3E /* SalesView.swift */; };
 		F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */; };
 		F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C3E29F743550040FA4D /* ContentView.swift */; };
 		F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16E2C4029F743560040FA4D /* Assets.xcassets */; };
@@ -17,7 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C94038EA29F7701700D91507 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		F1483A9829FA049300CF8B3E /* MenuRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRegister.swift; sourceTree = "<group>"; };
+		F1483A9A29FA053C00CF8B3E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		F1483A9C29FA059200CF8B3E /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		F1483A9E29FA05A400CF8B3E /* SalesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesView.swift; sourceTree = "<group>"; };
 		F16E2C3929F743550040FA4D /* Flutter en Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flutter en Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flutter_en_MacApp.swift; sourceTree = "<group>"; };
 		F16E2C3E29F743550040FA4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,11 +63,14 @@
 		F16E2C3B29F743550040FA4D /* Flutter en Mac */ = {
 			isa = PBXGroup;
 			children = (
-				F1D329FA29F7496000536D77 /* PurchaseView.swift */,
-				C94038EA29F7701700D91507 /* UserView.swift */,
-				F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */,
 				F16E2C3E29F743550040FA4D /* ContentView.swift */,
 				F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */,
+				F1483A9829FA049300CF8B3E /* MenuRegister.swift */,
+				F1D329FA29F7496000536D77 /* PurchaseView.swift */,
+				F16E2C3C29F743550040FA4D /* Flutter_en_MacApp.swift */,
+				F1483A9A29FA053C00CF8B3E /* RegisterView.swift */,
+				F1483A9C29FA059200CF8B3E /* ProductView.swift */,
+				F1483A9E29FA05A400CF8B3E /* SalesView.swift */,
 				F16E2C4029F743560040FA4D /* Assets.xcassets */,
 				F16E2C4229F743560040FA4D /* Preview Content */,
 			);
@@ -146,11 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1483A9F29FA05A400CF8B3E /* SalesView.swift in Sources */,
+				F1483A9D29FA059200CF8B3E /* ProductView.swift in Sources */,
 				F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */,
 				F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */,
-				C94038EB29F7701700D91507 /* UserView.swift in Sources */,
+				F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */,
 				F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */,
 				F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */,
+				F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
