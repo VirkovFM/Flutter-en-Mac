@@ -23,6 +23,7 @@ struct SalesView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
             
+            
             Text("Sales").font(.largeTitle).padding().foregroundColor(Color.white).overlay(
                 Text("Sales").font(.largeTitle).padding().foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769)).blur(radius: 5))
             

@@ -25,6 +25,7 @@ struct ProductView: View {
             Text("Product").font(.largeTitle).padding().foregroundColor(Color.white).overlay(
                 Text("Product").font(.largeTitle).padding().foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769)).blur(radius: 5))
             
+            
             Form{
                 
                 TextField("ID", text: $Id)
