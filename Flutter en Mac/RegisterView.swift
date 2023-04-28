@@ -15,6 +15,7 @@ struct RegisterView: View {
     @State private var Genero = ""
     @State private var Email = ""
     @State private var Contrasena = ""
+    @State private var Rol = ""
     
     var body: some View {
         ZStack{
@@ -23,30 +24,33 @@ struct RegisterView: View {
                 Spacer(minLength: 30)
      
                 
-                Text("Registrar Usuario")
+                Text("Interface Register")
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.white)
                 
                 Form{
-                    TextField("IDUsurio", text: $IDUsuario)
+                    TextField("ID", text: $IDUsuario)
                     Section{
-                        TextField("Nombre", text: $Nombre)
+                        TextField("Name", text: $Nombre)
                     }
                     Section{
-                        TextField("Apellido", text: $Apellido)
+                        TextField("Last Name", text: $Apellido)
                     }
                     Section{
-                        TextField("Edad", text: $Edad)
+                        TextField("Age", text: $Edad)
                     }
                     Section{
-                        TextField("Genero", text: $Genero)
+                        TextField("Gender", text: $Genero)
                     }
                     Section{
                         TextField("Email", text: $Email)
                     }
                     Section{
-                        SecureField("Contraseña", text: $Contrasena)
+                        SecureField("Password", text: $Contrasena)
+                    }
+                    Section{
+                        TextField("Rol", text: $Rol)
                     }
                     
                 }.padding()

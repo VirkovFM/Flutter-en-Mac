@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90C0A3729FC86EB00B2547A /* pruebas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C0A3629FC86EB00B2547A /* pruebas.swift */; };
 		F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9829FA049300CF8B3E /* MenuRegister.swift */; };
 		F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9A29FA053C00CF8B3E /* RegisterView.swift */; };
 		F1483A9D29FA059200CF8B3E /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9C29FA059200CF8B3E /* ProductView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C90C0A3629FC86EB00B2547A /* pruebas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebas.swift; sourceTree = "<group>"; };
 		F1483A9829FA049300CF8B3E /* MenuRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRegister.swift; sourceTree = "<group>"; };
 		F1483A9A29FA053C00CF8B3E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F1483A9C29FA059200CF8B3E /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				F16E2C3E29F743550040FA4D /* ContentView.swift */,
+				C90C0A3629FC86EB00B2547A /* pruebas.swift */,
 				F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */,
 				F1483A9829FA049300CF8B3E /* MenuRegister.swift */,
 				F1D329FA29F7496000536D77 /* PurchaseView.swift */,
@@ -162,6 +165,7 @@
 				F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */,
 				F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */,
 				F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */,
+				C90C0A3729FC86EB00B2547A /* pruebas.swift in Sources */,
 				F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

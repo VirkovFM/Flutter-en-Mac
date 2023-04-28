@@ -30,13 +30,13 @@ struct SalesView: View {
             Form{
                 
                 TextField("ID", text: $Id)
-                TextField("Name", text: $name)
-                TextField("Last Name", text: $quantity)
-                TextField("Age", text: $IDV)
-                TextField("Gender", text: $IDC)
-                TextField("Email", text: $pieces)
-                TextField("Password", text: $subtotal)
-                TextField("Rol", text: $total)
+                TextField("NAME", text: $name)
+                TextField("CANT", text: $quantity)
+                TextField("IDV", text: $IDV)
+                TextField("IDC", text: $IDC)
+                TextField("PIECES", text: $pieces)
+                TextField("SUBTOTAL", text: $subtotal)
+                TextField("TOTAL", text: $total)
             }.padding().scrollContentBackground(.hidden)
                 
             

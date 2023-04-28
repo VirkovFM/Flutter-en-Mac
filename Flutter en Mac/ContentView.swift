@@ -13,18 +13,28 @@ struct ContentView: View {
     @State private var mostrarAlerta = false
     
     var body: some View {
-        Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(ZStack {
+        
+        
+        Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
+            
+            ZStack {
+                
             Text("Login")
             NavigationView{
+
                 Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
                     VStack{
-                        Text("Aiba").font(.largeTitle).padding()
+                        
+                        Text("Login").font(.largeTitle).padding().padding(.bottom)
+                        Image("user")
+                        
+                        
                         Form{
                             Section{
-                                TextField("User", text: $email)
+                                TextField("User", text: $email).foregroundColor(.black)
                             }
                             Section{
-                                SecureField("Password", text: $contrasena)
+                                SecureField("Password", text: $contrasena).foregroundColor(.black)
                             }
                         }.padding().scrollContentBackground(.hidden)
                         
@@ -49,12 +59,13 @@ struct ContentView: View {
                         
                     }.buttonStyle(FilledButtonStyle())
 */
-                }.padding()
+            }.padding(.top)
+                
                     
                     /*NavigationLink(destination: Login(), label: {Text("ir a la ventana del perfil")}).padding().foregroundColor(.black)*/
-        }.navigationTitle("Home"))
-        
+            }.navigationTitle("a").background(Color(red: 0.596, green: 0.694, blue: 0.769)))
             }
+    
         }
     
 
@@ -69,6 +80,15 @@ struct FilledButtonStyle: ButtonStyle{
             //.font(.system(size: 32))
         
 
+    }
+}
+
+struct LogoView: View {
+    var body: some View {
+        Image("Tree")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 30, height: 30)
     }
 }
 

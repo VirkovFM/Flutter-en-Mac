@@ -30,11 +30,11 @@ struct ProductView: View {
                 
                 TextField("ID", text: $Id)
                 TextField("Name", text: $name)
-                TextField("Last Name", text: $description)
-                TextField("Age", text: $units)
-                TextField("Gender", text: $cost)
-                TextField("Email", text: $price)
-                TextField("Password", text: $utility)
+                TextField("Description", text: $description)
+                TextField("Units", text: $units)
+                TextField("Cost", text: $cost)
+                TextField("Price", text: $price)
+                TextField("Utility", text: $utility)
             }.padding().scrollContentBackground(.hidden)
                 
             
