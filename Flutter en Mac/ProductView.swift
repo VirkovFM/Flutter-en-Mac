@@ -27,14 +27,27 @@ struct ProductView: View {
             
             
             Form{
-                
                 TextField("ID", text: $Id)
-                TextField("Name", text: $name)
-                TextField("Description", text: $description)
-                TextField("Units", text: $units)
-                TextField("Cost", text: $cost)
-                TextField("Price", text: $price)
-                TextField("Utility", text: $utility)
+                
+                Section{
+                    TextField("Name", text: $name)
+                }
+                Section{
+                    TextField("Description", text: $description)
+                }
+                Section{
+                    TextField("Units", text: $units)
+                }
+                Section{
+                    TextField("Cost", text: $cost)
+                }
+                Section{
+                    TextField("Price", text: $price)
+                }
+                Section{
+                    TextField("Utility", text: $utility)
+                }
+        
             }.padding().scrollContentBackground(.hidden)
                 
             

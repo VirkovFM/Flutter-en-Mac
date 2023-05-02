@@ -21,11 +21,16 @@ struct PurchaseView: View {
                 Text("Purchase").font(.largeTitle).padding().foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769)).blur(radius: 5))
             
             Form{
-                
                 TextField("Id Product", text: $idProduct)
-                TextField("Name", text: $name)
-                SecureField("Pieces", text: $pieces)
-                SecureField("IDA", text: $ida)
+                Section{
+                    TextField("Name", text: $name)
+                }
+                Section{
+                    SecureField("Pieces", text: $pieces)
+                }
+                Section{
+                    SecureField("IDA", text: $ida)
+                }
             }.padding().scrollContentBackground(.hidden)
             
             Button("Crear cuenta"){

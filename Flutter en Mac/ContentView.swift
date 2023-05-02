@@ -50,7 +50,7 @@ struct ContentView: View {
                         }.padding().buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlerta){*/
                         NavigationLink(destination: MenuAdmin(), label: {Text("LOGIN")}).padding().buttonStyle(FilledButtonStyle())
 
-                        NavigationLink(destination: MenuAdmin(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
+                        NavigationLink(destination: RegisterView(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
                         
                         
                     }.foregroundColor(.white)) // #393939
