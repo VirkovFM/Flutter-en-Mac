@@ -22,8 +22,14 @@ struct ProductView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
             
-            Text("Product").font(.largeTitle).padding().foregroundColor(Color.white).overlay(
-                Text("Product").font(.largeTitle).padding().foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769)).blur(radius: 5))
+            Text("PRODUCT")
+                .font(.largeTitle)
+                .font(.system(size: 30))
+                .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                .fontWeight(.bold)
+                .padding(.top)
+                .padding(.bottom)
+               
             
             
             Form{
@@ -51,16 +57,15 @@ struct ProductView: View {
             }.padding().scrollContentBackground(.hidden)
                 
             
-            Button("High"){
-                //mos
-                //mostrarAlerta = true
-                //print($nombre)
+            Button("HIGH"){
                 if(Id == "" || name == "" || description == "" || units == "" || cost == "" || utility == "" || price == "" ){
                     showAlert = true
                     
                 }
                 
-            }.frame(minWidth: 0, maxWidth: 100).buttonStyle(grayButton())
+            }.frame(minWidth: 0, maxWidth: 100)
+                .buttonStyle(FilledButtonStyle())
+                .fontWeight(.bold)
                 .alert(isPresented: $showAlert){
                     Alert(title: Text("Tonto"), message: Text("Llene los campos"))
                 }

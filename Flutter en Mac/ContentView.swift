@@ -18,39 +18,50 @@ struct ContentView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             
             ZStack {
-                
-            Text("Login")
             NavigationView{
 
                 Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
-                    VStack{
+                    VStack(spacing: 20){
                         
-                        Text("Login").font(.largeTitle).padding().padding(.bottom)
+                        Text("LOGIN")
+                            .font(.largeTitle)
+                            .font(.system(size: 30))
+                            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                            .fontWeight(.bold)
+                            .padding()
+                            .padding(.bottom)
+                        
                         Image("user")
                         
-                        
+                        Text("USER")
+                            .offset(x:-155, y: 45)
+                            .font(.system(size: 30))
+                            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                            .fontWeight(.bold)
                         Form{
                             Section{
-                                TextField("User", text: $email).foregroundColor(.black)
+                                TextField("USER", text: $email)
+                                    .foregroundColor(.black)
                             }
+                            
                             Section{
-                                SecureField("Password", text: $contrasena).foregroundColor(.black)
+                                SecureField("PASSWORD", text: $contrasena)
+                                    .foregroundColor(.black)
+                                
                             }
-                        }.padding().scrollContentBackground(.hidden)
+                            
+                            
+                            
+                        }
+                        .scrollContentBackground(.hidden)
                         
-                        /*Button("LOGIN"){
-                            mostrarAlerta = true
-                            mostrarAlerta = true
-                            if (email != "" ){
-                                if (contrasena != ""){
-                                        mostrarAlerta = false
-                                    
-                                }
-                            }
-                        }.padding().buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlerta){*/
                         NavigationLink(destination: MenuAdmin(), label: {Text("LOGIN")}).padding().buttonStyle(FilledButtonStyle())
+                            .offset(y: -100)
+                            .fontWeight(.bold)
 
                         NavigationLink(destination: RegisterView(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
+                            .offset(y: -100)
+                            .fontWeight(.bold)
                         
                         
                     }.foregroundColor(.white)) // #393939
@@ -74,9 +85,11 @@ struct FilledButtonStyle: ButtonStyle{
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
+            .frame(width: 300)
             .background(configuration.isPressed ? Color.blue: Color(#colorLiteral(red: 0.596, green: 0.694, blue: 0.769, alpha: 1))) // #98b1c4)
             .foregroundColor(.white)
             .clipShape(Capsule())
+        
             //.font(.system(size: 32))
         
 

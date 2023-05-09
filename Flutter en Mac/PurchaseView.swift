@@ -42,7 +42,8 @@ struct PurchaseView: View {
                     
                 }
                 
-            }.buttonStyle(grayButton())
+            }.buttonStyle(FilledButtonStyle())
+                .fontWeight(.bold)
                 .alert(isPresented: $mostrarAlertaVacio){
                     Alert(title: Text("Tonto"), message: Text("Llene los campos"))
                 }
@@ -63,6 +64,7 @@ struct PurchaseView_Previews: PreviewProvider {
 struct grayButton:ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label.padding().background(Color(red: 0.596, green: 0.694, blue: 0.769))
+            
             .foregroundColor(Color.white)
             .clipShape(Capsule())
     }
