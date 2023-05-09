@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var Email = ""
     @State private var Contrasena = ""
     @State private var Rol = ""
+    @State private var showError = false
     
     var body: some View {
         ZStack{
@@ -24,39 +25,55 @@ struct RegisterView: View {
                 Spacer(minLength: 30)
      
                 
-                Text("Interface Register")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
+                Text("INTERFACE REGISTER")
+                    .font(.system(size: 30))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                    .offset(x:-49, y: 30)
+                
+                Divider()
+                    .background(Color.white)
+                    .frame(width: 350)
+                    .offset(x: -39, y: 10)
+                
                 
                 Form{
                     TextField("ID", text: $IDUsuario)
                     Section{
-                        TextField("Name", text: $Nombre)
+                        TextField("NAME", text: $Nombre)
                     }
                     Section{
-                        TextField("Last Name", text: $Apellido)
+                        TextField("LAST NAME", text: $Apellido)
                     }
                     Section{
-                        TextField("Age", text: $Edad)
+                        TextField("AGE", text: $Edad)
                     }
                     Section{
-                        TextField("Gender", text: $Genero)
+                        TextField("GENDER", text: $Genero)
                     }
                     Section{
-                        TextField("Email", text: $Email)
+                        TextField("EMAIL", text: $Email)
                     }
                     Section{
-                        SecureField("Password", text: $Contrasena)
+                        SecureField("PASSWORD", text: $Contrasena)
                     }
                     Section{
-                        TextField("Rol", text: $Rol)
+                        TextField("ROL", text: $Rol)
                     }
                     
                 }.padding()
                 .scrollContentBackground(.hidden)
                 
                 NavigationLink(destination: ContentView(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
+                    .fontWeight(.bold)
+                
+                if(IDUsuario == "" || Nombre == "" || Apellido == "" || Edad == "" || Genero == "" || Email == "" || Contrasena == "" || Rol == ""){
+                    
+                  
+                }else{
+                    
+                }
+                
             }
         }
     }

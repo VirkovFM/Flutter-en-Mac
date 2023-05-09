@@ -17,26 +17,34 @@ struct PurchaseView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
             
-            Text("Purchase").font(.largeTitle).padding().foregroundColor(Color.white).overlay(
-                Text("Purchase").font(.largeTitle).padding().foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769)).blur(radius: 5))
+            Text("PURCHASE")
+                .fontWeight(.bold)
+                .font(.system(size: 30))
+                .offset(x: -125, y: 90)
+                .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                
+            Divider()
+                 .background(Color.white)
+                 .frame(width: 250)
+                 .offset(x: -150, y: 70)
             
             Form{
-                TextField("Id Product", text: $idProduct)
+                TextField("ID PRODUCT", text: $idProduct)
                 Section{
-                    TextField("Name", text: $name)
+                    TextField("NAME", text: $name)
                 }
                 Section{
-                    SecureField("Pieces", text: $pieces)
+                    SecureField("PIECES", text: $pieces)
                 }
                 Section{
                     SecureField("IDA", text: $ida)
                 }
-            }.padding().scrollContentBackground(.hidden)
+            }
+            .padding(.vertical, 150)
+            .scrollContentBackground(.hidden)
             
-            Button("Crear cuenta"){
-                //mos
-                //mostrarAlerta = true
-                //print($nombre)
+            Button("CREAR CUENTA"){
+            
                 if(idProduct == "" || name == "" || pieces == "" || ida == ""){
                     mostrarAlertaVacio = true
                     
@@ -61,11 +69,4 @@ struct PurchaseView_Previews: PreviewProvider {
     }
 }
 
-struct grayButton:ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label.padding().background(Color(red: 0.596, green: 0.694, blue: 0.769))
-            
-            .foregroundColor(Color.white)
-            .clipShape(Capsule())
-    }
-}
+

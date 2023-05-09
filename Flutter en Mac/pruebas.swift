@@ -13,6 +13,7 @@ struct pruebas: View {
         VStack{
             
             
+                
         }
     }
 }
@@ -24,3 +25,5 @@ struct pruebas_Previews: PreviewProvider {
         
     }
 }
+
+

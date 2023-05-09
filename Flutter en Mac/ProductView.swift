@@ -23,12 +23,16 @@ struct ProductView: View {
         VStack{
             
             Text("PRODUCT")
-                .font(.largeTitle)
                 .font(.system(size: 30))
                 .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
                 .fontWeight(.bold)
-                .padding(.top)
-                .padding(.bottom)
+                .padding()
+                .offset(x: -140, y: 20)
+            
+            Divider()
+                .background(Color.white)
+                .frame(width: 220)
+                .offset(x: -140)
                
             
             

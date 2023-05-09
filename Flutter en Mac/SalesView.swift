@@ -24,8 +24,15 @@ struct SalesView: View {
         VStack{
             
             
-            Text("Sales").font(.largeTitle).padding().foregroundColor(Color.white).overlay(
-                Text("Sales").font(.largeTitle).padding().foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769)).blur(radius: 5))
+            Text("SALES")
+                .fontWeight(.bold)
+                .font(.system(size: 30))
+                .offset(x: -160, y: 30)
+                .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+        Divider()
+            .background(Color.white)
+            .offset(x: -150 ,y: 15)
+            .frame(width: 200)
             
             Form{
                 
@@ -56,7 +63,7 @@ struct SalesView: View {
             }.padding().scrollContentBackground(.hidden)
                 
             
-            Button("High"){
+            Button("HIGH"){
                 //mos
                 //mostrarAlerta = true
                 //print($nombre)
@@ -65,8 +72,11 @@ struct SalesView: View {
                     
                 }
                 
-            }.frame(minWidth: 0, maxWidth: 100).buttonStyle(grayButton())
-                .alert(isPresented: $showAlert){
+            }
+            .frame(minWidth: 0, maxWidth: 100)
+            .buttonStyle(FilledButtonStyle())
+            .fontWeight(.bold)
+            .alert(isPresented: $showAlert){
                     Alert(title: Text("Tonto"), message: Text("Llene los campos"))
                 }
                 /*.alert(isPresented: $mostrarAlerta){

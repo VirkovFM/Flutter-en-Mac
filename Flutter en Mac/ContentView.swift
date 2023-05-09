@@ -19,9 +19,8 @@ struct ContentView: View {
             
             ZStack {
             NavigationView{
-
                 Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
-                    VStack(spacing: 20){
+                    VStack{
                         
                         Text("LOGIN")
                             .font(.largeTitle)
@@ -34,30 +33,42 @@ struct ContentView: View {
                         Image("user")
                         
                         Text("USER")
-                            .offset(x:-155, y: 45)
+                            .offset(x:-155, y: 55)
                             .font(.system(size: 30))
                             .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
                             .fontWeight(.bold)
+                        
+                        
+                        Text("PASSWORD")
+                            .offset(x:-110, y: 105)
+                            .font(.system(size: 30))
+                            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                            .fontWeight(.bold)
+                        
                         Form{
                             Section{
                                 TextField("USER", text: $email)
+
                                     .foregroundColor(.black)
                             }
+                            
                             
                             Section{
                                 SecureField("PASSWORD", text: $contrasena)
                                     .foregroundColor(.black)
-                                
+                                    
                             }
                             
                             
-                            
+  
                         }
                         .scrollContentBackground(.hidden)
+                        .offset(y:-30)
                         
                         NavigationLink(destination: MenuAdmin(), label: {Text("LOGIN")}).padding().buttonStyle(FilledButtonStyle())
                             .offset(y: -100)
                             .fontWeight(.bold)
+                            .padding(.bottom)
 
                         NavigationLink(destination: RegisterView(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
                             .offset(y: -100)
@@ -70,11 +81,14 @@ struct ContentView: View {
                         
                     }.buttonStyle(FilledButtonStyle())
 */
-            }.padding(.top)
+            }
+            .padding(.top)
+            
                 
                     
                     /*NavigationLink(destination: Login(), label: {Text("ir a la ventana del perfil")}).padding().foregroundColor(.black)*/
-            }.navigationTitle("a").background(Color(red: 0.596, green: 0.694, blue: 0.769)))
+            }
+                .navigationTitle("").background(Color(red: 0.596, green: 0.694, blue: 0.769)))
             }
     
         }
@@ -86,7 +100,7 @@ struct FilledButtonStyle: ButtonStyle{
         configuration.label
             .padding()
             .frame(width: 300)
-            .background(configuration.isPressed ? Color.blue: Color(#colorLiteral(red: 0.596, green: 0.694, blue: 0.769, alpha: 1))) // #98b1c4)
+            .background(configuration.isPressed ? Color(white: 1, opacity: 0.5): Color(#colorLiteral(red: 0.596, green: 0.694, blue: 0.769, alpha: 1))) // #98b1c4)
             .foregroundColor(.white)
             .clipShape(Capsule())
         
