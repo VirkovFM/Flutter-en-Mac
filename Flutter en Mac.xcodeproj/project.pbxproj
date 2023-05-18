@@ -17,6 +17,7 @@
 		F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16E2C4029F743560040FA4D /* Assets.xcassets */; };
 		F16E2C4429F743560040FA4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16E2C4329F743560040FA4D /* Preview Assets.xcassets */; };
 		F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */; };
+		F1BB532E2A15BDDD0035C028 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1BB532D2A15BDDD0035C028 /* GoogleService-Info.plist */; };
 		F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D329FA29F7496000536D77 /* PurchaseView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		F16E2C4029F743560040FA4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F16E2C4329F743560040FA4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAdmin.swift; sourceTree = "<group>"; };
+		F1BB532D2A15BDDD0035C028 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1D329FA29F7496000536D77 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 		F16E2C3B29F743550040FA4D /* Flutter en Mac */ = {
 			isa = PBXGroup;
 			children = (
+				F1BB532D2A15BDDD0035C028 /* GoogleService-Info.plist */,
 				F16E2C3E29F743550040FA4D /* ContentView.swift */,
 				C90C0A3629FC86EB00B2547A /* pruebas.swift */,
 				F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				F16E2C4429F743560040FA4D /* Preview Assets.xcassets in Resources */,
 				F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */,
+				F1BB532E2A15BDDD0035C028 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
