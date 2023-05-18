@@ -24,7 +24,7 @@ class SaleViewModels: ObservableObject {
     
     private var db = Firestore.firestore()
     
-    private func addMovie(_ sale: Sale) {
+    private func addSale(_ sale: Sale) {
         do {
             let _ = try db.collection("salelist").addDocument(from: sale)
         }
@@ -33,13 +33,33 @@ class SaleViewModels: ObservableObject {
         }
     }
     
-    private func updateMovie(_ sale: Sale) {
+    private func updateSale(_ sale: Sale) {
         if let documentId = sale.id {
             do {
                 try db.collection("salelist").document(documentId).setData(from: sale)
             }
             catch {
                 print(error)
+            }
+        }
+    }
+    
+    private func createListSale(sale: Sale) {
+        do {
+            let _ = try db.collection("salelist").addDocument(from: sale)
+        } catch {
+            print(error)
+        }
+    }
+
+    private func deleteSale(sale: Sale) {
+        if let documentId = sale.id {
+            db.collection("salelist").document(documentId).delete { error in
+                if let error = error {
+                    print("Error deleting document: \(error)")
+                } else {
+                    print("Document successfully deleted.")
+                }
             }
         }
     }

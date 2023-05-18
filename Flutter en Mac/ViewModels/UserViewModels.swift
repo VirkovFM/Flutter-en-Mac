@@ -24,7 +24,7 @@ class UserViewModels: ObservableObject {
     
     private var db = Firestore.firestore()
     
-    private func addMovie(_ user: User) {
+    private func addUser(_ user: User) {
         do {
             let _ = try db.collection("userlist").addDocument(from: user)
         }
@@ -33,7 +33,7 @@ class UserViewModels: ObservableObject {
         }
     }
     
-    private func updateMovie(_ user: User) {
+    private func updatUser(_ user: User) {
         if let documentId = user.id {
             do {
                 try db.collection("userlist").document(documentId).setData(from: user)
@@ -43,4 +43,25 @@ class UserViewModels: ObservableObject {
             }
         }
     }
+    
+    private func createListUser(user: User) {
+        do {
+            let _ = try db.collection("userlist").addDocument(from: user)
+        } catch {
+            print(error)
+        }
+    }
+
+    private func deleteUser(user: User) {
+        if let documentId = user.id {
+            db.collection("userlist").document(documentId).delete { error in
+                if let error = error {
+                    print("Error deleting document: \(error)")
+                } else {
+                    print("Document successfully deleted.")
+                }
+            }
+        }
+    }
+    
 }

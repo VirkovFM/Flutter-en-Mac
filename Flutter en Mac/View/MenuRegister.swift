@@ -10,7 +10,7 @@ import SwiftUI
 struct MenuRegister: View {
     var body: some View {
         
-        NavigationView{
+        
             Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
                 VStack{
                     Text("MENU")
@@ -33,7 +33,7 @@ struct MenuRegister: View {
                         .fontWeight(.bold)
                     
                 })
-        }
+        
     }
 }
 

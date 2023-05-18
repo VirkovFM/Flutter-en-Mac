@@ -12,7 +12,7 @@ struct MenuAdmin: View {
     
     var body: some View {
         
-        NavigationView{
+        
             Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
                 VStack{
                     NavigationLink(destination: MenuRegister(), label: {Text("REGISTER")}).padding().buttonStyle(FilledButtonStyle())
@@ -24,7 +24,7 @@ struct MenuAdmin: View {
                     NavigationLink(destination: PurchaseView(), label: {Text("PURCHASE")}).padding().buttonStyle(FilledButtonStyle())
                         .fontWeight(.bold)
                 })
-        }
+        
     }
 }
 

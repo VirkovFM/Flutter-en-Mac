@@ -24,7 +24,7 @@ class ProductViewModels: ObservableObject {
     
     private var db = Firestore.firestore()
     
-    private func addMovie(_ product: Product) {
+    private func addProduct(_ product: Product) {
         do {
             let _ = try db.collection("productlist").addDocument(from: product)
         }
@@ -33,13 +33,33 @@ class ProductViewModels: ObservableObject {
         }
     }
     
-    private func updateMovie(_ product: Product) {
+    private func updateProduct(_ product: Product) {
         if let documentId = product.id {
             do {
                 try db.collection("productlist").document(documentId).setData(from: product)
             }
             catch {
                 print(error)
+            }
+        }
+    }
+    
+    private func createListProduct(product: Product) {
+        do {
+            let _ = try db.collection("productlist").addDocument(from: product)
+        } catch {
+            print(error)
+        }
+    }
+
+    private func deleteProduct(product: Product) {
+        if let documentId = product.id {
+            db.collection("productlist").document(documentId).delete { error in
+                if let error = error {
+                    print("Error deleting document: \(error)")
+                } else {
+                    print("Document successfully deleted.")
+                }
             }
         }
     }

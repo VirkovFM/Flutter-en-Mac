@@ -24,7 +24,7 @@ class PurchaseViewModels: ObservableObject {
     
     private var db = Firestore.firestore()
     
-    private func addMovie(_ purchase: Purchase) {
+    private func addPurchase(_ purchase: Purchase) {
         do {
             let _ = try db.collection("purchaselist").addDocument(from: purchase)
         }
@@ -33,13 +33,33 @@ class PurchaseViewModels: ObservableObject {
         }
     }
     
-    private func updateMovie(_ purchase: Purchase) {
+    private func updatePurchase(_ purchase: Purchase) {
         if let documentId = purchase.id {
             do {
                 try db.collection("purchaselist").document(documentId).setData(from: purchase)
             }
             catch {
                 print(error)
+            }
+        }
+    }
+    
+    private func createListPurchase(purchase: Purchase) {
+        do {
+            let _ = try db.collection("purchaselist").addDocument(from: purchase)
+        } catch {
+            print(error)
+        }
+    }
+
+    private func deletePurchase(purchase: Purchase) {
+        if let documentId = purchase.id {
+            db.collection("purchaselist").document(documentId).delete { error in
+                if let error = error {
+                    print("Error deleting document: \(error)")
+                } else {
+                    print("Document successfully deleted.")
+                }
             }
         }
     }
