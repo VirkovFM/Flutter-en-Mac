@@ -30,6 +30,7 @@ struct RegisterView: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
                     .offset(x:-49, y: 30)
+                    .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
                 
                 Divider()
                     .background(Color.white)

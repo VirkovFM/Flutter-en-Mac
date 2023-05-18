@@ -29,6 +29,7 @@ struct SalesView: View {
                 .font(.system(size: 30))
                 .offset(x: -160, y: 30)
                 .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                .padding(EdgeInsets(top: 0, leading: 55, bottom: 0, trailing: 0))
         Divider()
             .background(Color.white)
             .offset(x: -150 ,y: 15)

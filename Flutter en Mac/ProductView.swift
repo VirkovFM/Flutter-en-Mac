@@ -28,6 +28,7 @@ struct ProductView: View {
                 .fontWeight(.bold)
                 .padding()
                 .offset(x: -140, y: 20)
+                .padding(EdgeInsets(top: 0, leading: 55, bottom: 0, trailing: 0))
             
             Divider()
                 .background(Color.white)

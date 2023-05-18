@@ -14,7 +14,6 @@ struct ContentView: View {
     
     var body: some View {
         
-        
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             
             ZStack {
@@ -31,8 +30,9 @@ struct ContentView: View {
                             .padding(.bottom)
                         
                         Image("user")
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
                         
-                        Text("USER")
+                        /*Text("USER")
                             .offset(x:-155, y: 55)
                             .font(.system(size: 30))
                             .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
@@ -43,7 +43,7 @@ struct ContentView: View {
                             .offset(x:-110, y: 105)
                             .font(.system(size: 30))
                             .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                            .fontWeight(.bold)
+                            .fontWeight(.bold)*/
                         
                         Form{
                             Section{
