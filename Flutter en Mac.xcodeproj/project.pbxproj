@@ -8,9 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C90C0A3729FC86EB00B2547A /* pruebas.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90C0A3629FC86EB00B2547A /* pruebas.swift */; };
-		F118B9052A15C11900CD9151 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118B9042A15C11900CD9151 /* Movie.swift */; };
-		F118B9072A15C14700CD9151 /* MovieViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118B9062A15C14700CD9151 /* MovieViewModels.swift */; };
-		F118B9092A15C1E400CD9151 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118B9082A15C1E400CD9151 /* MoviesViewModel.swift */; };
+		C9C8A68E2A16BE350046FEAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9C8A68D2A16BE350046FEAA /* GoogleService-Info.plist */; };
+		C9C8A6902A16BEC40046FEAA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8A68F2A16BEC40046FEAA /* User.swift */; };
+		C9C8A6922A16C0D80046FEAA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8A6912A16C0D80046FEAA /* Product.swift */; };
+		C9C8A6982A16C1310046FEAA /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8A6972A16C1310046FEAA /* Sale.swift */; };
+		C9C8A69A2A16C1590046FEAA /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8A6992A16C1590046FEAA /* Purchase.swift */; };
+		C9C8A69C2A16C5620046FEAA /* UserViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8A69B2A16C5620046FEAA /* UserViewModels.swift */; };
+		C9C8A69E2A16C7A10046FEAA /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C8A69D2A16C7A10046FEAA /* ProductViewModel.swift */; };
+		C9CC37172A16CA90008EE341 /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC37162A16CA90008EE341 /* SaleViewModel.swift */; };
+		C9CC37192A16CACF008EE341 /* PurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC37182A16CACF008EE341 /* PurchaseViewModel.swift */; };
 		F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9829FA049300CF8B3E /* MenuRegister.swift */; };
 		F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9A29FA053C00CF8B3E /* RegisterView.swift */; };
 		F1483A9D29FA059200CF8B3E /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1483A9C29FA059200CF8B3E /* ProductView.swift */; };
@@ -24,14 +30,19 @@
 		F64FBD5C2A161E2C000C297B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5B2A161E2C000C297B /* FirebaseAuth */; };
 		F64FBD5E2A161E2C000C297B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5D2A161E2C000C297B /* FirebaseFirestore */; };
 		F64FBD602A161E2C000C297B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5F2A161E2C000C297B /* FirebaseFirestoreSwift */; };
-		F64FBD622A1624EA000C297B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F64FBD612A1624EA000C297B /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C90C0A3629FC86EB00B2547A /* pruebas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebas.swift; sourceTree = "<group>"; };
-		F118B9042A15C11900CD9151 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		F118B9062A15C14700CD9151 /* MovieViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModels.swift; sourceTree = "<group>"; };
-		F118B9082A15C1E400CD9151 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		C9C8A68D2A16BE350046FEAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9C8A68F2A16BEC40046FEAA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C9C8A6912A16C0D80046FEAA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C9C8A6972A16C1310046FEAA /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		C9C8A6992A16C1590046FEAA /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		C9C8A69B2A16C5620046FEAA /* UserViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModels.swift; sourceTree = "<group>"; };
+		C9C8A69D2A16C7A10046FEAA /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		C9CC37162A16CA90008EE341 /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
+		C9CC37182A16CACF008EE341 /* PurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewModel.swift; sourceTree = "<group>"; };
 		F1483A9829FA049300CF8B3E /* MenuRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRegister.swift; sourceTree = "<group>"; };
 		F1483A9A29FA053C00CF8B3E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		F1483A9C29FA059200CF8B3E /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
@@ -43,7 +54,6 @@
 		F16E2C4329F743560040FA4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAdmin.swift; sourceTree = "<group>"; };
 		F1D329FA29F7496000536D77 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
-		F64FBD612A1624EA000C297B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +73,10 @@
 		F118B9012A15BF7700CD9151 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F118B9042A15C11900CD9151 /* Movie.swift */,
+				C9C8A68F2A16BEC40046FEAA /* User.swift */,
+				C9C8A6912A16C0D80046FEAA /* Product.swift */,
+				C9C8A6972A16C1310046FEAA /* Sale.swift */,
+				C9C8A6992A16C1590046FEAA /* Purchase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -71,8 +84,10 @@
 		F118B9022A15BF8300CD9151 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				F118B9062A15C14700CD9151 /* MovieViewModels.swift */,
-				F118B9082A15C1E400CD9151 /* MoviesViewModel.swift */,
+				C9C8A69B2A16C5620046FEAA /* UserViewModels.swift */,
+				C9C8A69D2A16C7A10046FEAA /* ProductViewModel.swift */,
+				C9CC37162A16CA90008EE341 /* SaleViewModel.swift */,
+				C9CC37182A16CACF008EE341 /* PurchaseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -112,7 +127,7 @@
 		F16E2C3B29F743550040FA4D /* Flutter en Mac */ = {
 			isa = PBXGroup;
 			children = (
-				F64FBD612A1624EA000C297B /* GoogleService-Info.plist */,
+				C9C8A68D2A16BE350046FEAA /* GoogleService-Info.plist */,
 				F118B9012A15BF7700CD9151 /* Models */,
 				F118B9022A15BF8300CD9151 /* ViewModels */,
 				F118B9032A15BF9700CD9151 /* View */,
@@ -197,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16E2C4429F743560040FA4D /* Preview Assets.xcassets in Resources */,
-				F64FBD622A1624EA000C297B /* GoogleService-Info.plist in Resources */,
+				C9C8A68E2A16BE350046FEAA /* GoogleService-Info.plist in Resources */,
 				F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,18 +224,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C8A69E2A16C7A10046FEAA /* ProductViewModel.swift in Sources */,
+				C9C8A6902A16BEC40046FEAA /* User.swift in Sources */,
 				F1483A9F29FA05A400CF8B3E /* SalesView.swift in Sources */,
 				F1483A9D29FA059200CF8B3E /* ProductView.swift in Sources */,
 				F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */,
+				C9C8A6982A16C1310046FEAA /* Sale.swift in Sources */,
 				F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */,
-				F118B9052A15C11900CD9151 /* Movie.swift in Sources */,
 				F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */,
 				F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */,
-				F118B9092A15C1E400CD9151 /* MoviesViewModel.swift in Sources */,
 				F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */,
 				C90C0A3729FC86EB00B2547A /* pruebas.swift in Sources */,
+				C9CC37192A16CACF008EE341 /* PurchaseViewModel.swift in Sources */,
+				C9C8A69A2A16C1590046FEAA /* Purchase.swift in Sources */,
 				F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */,
-				F118B9072A15C14700CD9151 /* MovieViewModels.swift in Sources */,
+				C9C8A69C2A16C5620046FEAA /* UserViewModels.swift in Sources */,
+				C9C8A6922A16C0D80046FEAA /* Product.swift in Sources */,
+				C9CC37172A16CA90008EE341 /* SaleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flutter en Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = U5XJYGF797;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -377,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flutter en Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = U5XJYGF797;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
