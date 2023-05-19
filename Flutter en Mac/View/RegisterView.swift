@@ -23,6 +23,8 @@ struct RegisterView: View {
             @State private var selectedOption = 0
     
     @State private var registerBool = false
+    //VIewModel
+    @ObservedObject var viewModel = UserViewModels()
     
     
     var body: some View {
@@ -48,10 +50,10 @@ struct RegisterView: View {
                 Form{
                     TextField("ID", text: $IDUsuario)
                     Section{
-                        TextField("NAME", text: $Nombre)
+                        TextField("NAME", text: $viewModel.user.name)
                     }
                     Section{
-                        TextField("LAST NAME", text: $Apellido)
+                        TextField("LAST NAME", text: $viewModel.user.lastName)
                     }
                     Section{
                         TextField("AGE", text: $Edad)
@@ -80,11 +82,11 @@ struct RegisterView: View {
                 Button(action:{
                     print(selectedOption)
                     Genero = String(selectedOption)
-                    if(IDUsuario == "" || Nombre == "" || Apellido == "" || Edad == "" || Genero == "" || Email == "" || Contrasena == "" || Rol == ""){
+                    if(IDUsuario == "" || viewModel.user.name == "" || viewModel.user.lastName == "" || Edad == "" || Genero == "" || Email == "" || Contrasena == "" || Rol == ""){
                         mostrarAlertaVacio = true
                     }else{
                         //Se ejecuta el CREATE de CRUD
-                        
+                        viewModel.user.id = IDUsuario
                         registerBool = true
                     }
                 }) {
