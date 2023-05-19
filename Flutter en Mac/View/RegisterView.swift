@@ -17,6 +17,13 @@ struct RegisterView: View {
     @State private var Contrasena = ""
     @State private var Rol = ""
     @State private var showError = false
+    @State private var mostrarAlertaVacio = false //ALERT
+    // DROPDOWN
+        let options = ["Masculino", "Femenino"]
+            @State private var selectedOption = 0
+    
+    @State private var registerBool = false
+    
     
     var body: some View {
         ZStack{
@@ -49,9 +56,14 @@ struct RegisterView: View {
                     Section{
                         TextField("AGE", text: $Edad)
                     }
-                    Section{
-                        TextField("GENDER", text: $Genero)
-                    }
+                    // DROPDOWN ***********************
+                    Picker(selection: $selectedOption, label: Text("Selecciona un genero")) {
+                        ForEach(0..<options.count) {
+                            index in
+                            Text(options[index])
+                        }
+                    }.pickerStyle(MenuPickerStyle())
+                                       // ***************************
                     Section{
                         TextField("EMAIL", text: $Email)
                     }
@@ -65,20 +77,39 @@ struct RegisterView: View {
                 }.padding()
                 .scrollContentBackground(.hidden)
                 
-                NavigationLink(destination: ContentView(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
-                    .fontWeight(.bold)
-                
-                if(IDUsuario == "" || Nombre == "" || Apellido == "" || Edad == "" || Genero == "" || Email == "" || Contrasena == "" || Rol == ""){
-                    
-                  
-                }else{
-                    
+                Button(action:{
+                    print(selectedOption)
+                    Genero = String(selectedOption)
+                    if(IDUsuario == "" || Nombre == "" || Apellido == "" || Edad == "" || Genero == "" || Email == "" || Contrasena == "" || Rol == ""){
+                        mostrarAlertaVacio = true
+                    }else{
+                        //Se ejecuta el CREATE de CRUD
+                        
+                        registerBool = true
+                    }
+                }) {
+                    Text("REGISTER")
+                }.buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlertaVacio){
+                    Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
                 }
+                
+                if(registerBool){
+                    NavigationLink(destination: MenuAdmin(), isActive: $registerBool){
+                        EmptyView()
+                    }.hidden()
+                }
+                
+                
+                
                 
             }
         }
     }
 }
+
+
+    
+
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {

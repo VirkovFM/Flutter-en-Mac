@@ -17,6 +17,10 @@ struct ProductView: View {
     @State private var price = ""
     @State private var utility = ""
     @State private var showAlert = false
+    @State private var mostrarAlertaVacio = false //ALERT
+    
+    
+    @State private var registerBool = false
     
     var body: some View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
@@ -62,21 +66,26 @@ struct ProductView: View {
             }.padding().scrollContentBackground(.hidden)
                 
             
-            Button("HIGH"){
-                if(Id == "" || name == "" || description == "" || units == "" || cost == "" || utility == "" || price == "" ){
-                    showAlert = true
-                    
-                }
+            Button(action:{
                 
-            }.frame(minWidth: 0, maxWidth: 100)
-                .buttonStyle(FilledButtonStyle())
-                .fontWeight(.bold)
-                .alert(isPresented: $showAlert){
-                    Alert(title: Text("Tonto"), message: Text("Llene los campos"))
+                if(Id == "" || name == "" || description == "" || units == "" || cost == "" || price == "" || utility == ""){
+                    mostrarAlertaVacio = true
+                }else{
+                    //Se ejecuta el CREATE de CRUD
+                    
+                    registerBool = true
                 }
-                /*.alert(isPresented: $mostrarAlerta){
-                Alert(title: Text("Hola"), message: Text("Has presionado el boton"))
-            }*/
+            }) {
+                Text("REGISTER")
+            }.buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlertaVacio){
+                Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
+            }
+            
+            if(registerBool){
+                NavigationLink(destination: MenuAdmin(), isActive: $registerBool){
+                    EmptyView()
+                }.hidden()
+            }
         })
     }
 }
