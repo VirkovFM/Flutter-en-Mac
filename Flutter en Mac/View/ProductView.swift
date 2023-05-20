@@ -69,6 +69,7 @@ struct ProductView: View {
             Button(action:{
                 
                 if(Id == "" || name == "" || description == "" || units == "" || cost == "" || price == "" || utility == ""){
+                    
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
@@ -86,6 +87,7 @@ struct ProductView: View {
                     EmptyView()
                 }.hidden()
             }
+            
         })
     }
 }

@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var email = ""
     @State private var contrasena = ""
     @State private var mostrarAlerta = false
+    @State private var MenuBool = false
     
     var body: some View {
         
@@ -32,19 +33,6 @@ struct ContentView: View {
                         Image("user")
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0))
                         
-                        /*Text("USER")
-                            .offset(x:-155, y: 55)
-                            .font(.system(size: 30))
-                            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                            .fontWeight(.bold)
-                        
-                        
-                        Text("PASSWORD")
-                            .offset(x:-110, y: 105)
-                            .font(.system(size: 30))
-                            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                            .fontWeight(.bold)*/
-                        
                         Form{
                             Section{
                                 TextField("USER", text: $email)
@@ -52,48 +40,59 @@ struct ContentView: View {
                                     .foregroundColor(.black)
                             }
                             
-                            
                             Section{
                                 SecureField("PASSWORD", text: $contrasena)
                                     .foregroundColor(.black)
                                     
                             }
-                            
-                            
-  
+
                         }
                         .scrollContentBackground(.hidden)
                         .offset(y:-30)
                         
-                        NavigationLink(destination: MenuAdmin(), label: {Text("LOGIN")}).padding().buttonStyle(FilledButtonStyle())
-                            .offset(y: -100)
-                            .fontWeight(.bold)
-                            .padding(.bottom)
+                        
+                        //Boton de Login
+                        Button(action:{
+                            
+                            if(email == "" || contrasena == ""){
+                                //Mpstrar alerta si los campos estan vacios
+                                mostrarAlerta = true
+                            }else{
+                                //Se ejecuta el CREATE de CRUD
+                                
+                                MenuBool = true
+                            }
+                            
+                        }) {
+                            Text("LOGIN")
+                                .fontWeight(.bold)
+                            
+                        }.buttonStyle(FilledButtonStyle())
+                            .offset(y: -160)
+                            .alert(isPresented: $mostrarAlerta){
+                            Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
+                        }
+                        if(MenuBool){
+                            NavigationLink(destination: MenuAdmin(), isActive: $MenuBool){
+                                EmptyView()
+                            }.hidden()
+                        }
 
                         NavigationLink(destination: RegisterView(), label: {Text("REGISTER")}).buttonStyle(FilledButtonStyle())
-                            .offset(y: -100)
+                            .offset(y: -140)
                             .fontWeight(.bold)
                         
                         
-                    }.foregroundColor(.white)) // #393939
-                
-                    /*Button("REGISTER"){
-                        
-                    }.buttonStyle(FilledButtonStyle())
-*/
+                    }.foregroundColor(.white))
+
             }
             .padding(.top)
-            
-                
-                    
-                    /*NavigationLink(destination: Login(), label: {Text("ir a la ventana del perfil")}).padding().foregroundColor(.black)*/
+
             }
                 .navigationTitle("").background(Color(red: 0.596, green: 0.694, blue: 0.769)))
             }
     
         }
-    
-
 
 struct FilledButtonStyle: ButtonStyle{
     func makeBody(configuration: Configuration) -> some View {
@@ -103,19 +102,6 @@ struct FilledButtonStyle: ButtonStyle{
             .background(configuration.isPressed ? Color(white: 1, opacity: 0.5): Color(#colorLiteral(red: 0.596, green: 0.694, blue: 0.769, alpha: 1))) // #98b1c4)
             .foregroundColor(.white)
             .clipShape(Capsule())
-        
-            //.font(.system(size: 32))
-        
-
-    }
-}
-
-struct LogoView: View {
-    var body: some View {
-        Image("Tree")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 30, height: 30)
     }
 }
 

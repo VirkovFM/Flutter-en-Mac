@@ -19,6 +19,11 @@ struct SalesView: View {
     @State private var total = ""
     @State private var showAlert = false
     
+    @State private var registerBool = false
+    
+    //VIewModel
+    @ObservedObject var viewModel = SaleViewModels()
+    
     var body: some View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
@@ -64,22 +69,29 @@ struct SalesView: View {
             }.padding().scrollContentBackground(.hidden)
                 
             
-            Button("HIGH"){
-                //mos
-                //mostrarAlerta = true
-                //print($nombre)
+            Button(action:{
+                
+                //Cambie en este pero no estoy del todo seguro si jale a como estan en las vistas
                 if(Id == "" || name == "" || quantity == "" || IDV == "" || IDC == "" || pieces == "" || subtotal == "" || total == ""){
                     showAlert = true
+                }else{
+                    //Se ejecuta el CREATE de CRUD
                     
+                    registerBool = true
                 }
+            }) {
+                Text("REGISTER")
+                    .fontWeight(.bold)
                 
+            }.buttonStyle(FilledButtonStyle()).alert(isPresented: $showAlert){
+                Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
             }
-            .frame(minWidth: 0, maxWidth: 100)
-            .buttonStyle(FilledButtonStyle())
-            .fontWeight(.bold)
-            .alert(isPresented: $showAlert){
-                    Alert(title: Text("Tonto"), message: Text("Llene los campos"))
-                }
+            
+            if(registerBool){
+                NavigationLink(destination: MenuAdmin(), isActive: $registerBool){
+                    EmptyView()
+                }.hidden()
+            }
                 /*.alert(isPresented: $mostrarAlerta){
                 Alert(title: Text("Hola"), message: Text("Has presionado el boton"))
             }*/
