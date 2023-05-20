@@ -26,7 +26,7 @@ class PurchaseViewModels: ObservableObject {
     
     private func addPurchase(_ purchase: Purchase) {
         do {
-            let _ = try db.collection("purchaselist").addDocument(from: purchase)
+            let _ = try db.collection("purchase").addDocument(from: purchase)
         }
         catch {
             print(error)
@@ -36,7 +36,7 @@ class PurchaseViewModels: ObservableObject {
     private func updatePurchase(_ purchase: Purchase) {
         if let documentId = purchase.id {
             do {
-                try db.collection("purchaselist").document(documentId).setData(from: purchase)
+                try db.collection("purchase").document(documentId).setData(from: purchase)
             }
             catch {
                 print(error)
@@ -44,23 +44,33 @@ class PurchaseViewModels: ObservableObject {
         }
     }
     
-    private func createListPurchase(purchase: Purchase) {
-        do {
-            let _ = try db.collection("purchaselist").addDocument(from: purchase)
-        } catch {
-            print(error)
-        }
-    }
-
-    private func deletePurchase(purchase: Purchase) {
-        if let documentId = purchase.id {
-            db.collection("purchaselist").document(documentId).delete { error in
-                if let error = error {
-                    print("Error deleting document: \(error)")
-                } else {
-                    print("Document successfully deleted.")
-                }
-            }
-        }
-    }
+    
+   private func updateOrAddPurchase() {
+     if let _ = purchase.id {
+       self.updatePurchase(self.purchase)
+     }
+     else {
+       addPurchase(purchase)
+     }
+   }
+    
+   private func removePurchase() {
+     if let documentId = purchase.id {
+       db.collection("purchase").document(documentId).delete { error in
+         if let error = error {
+           print(error.localizedDescription)
+         }
+       }
+     }
+   }
+    
+   // UI handlers
+    
+   func handleDoneTapped() {
+     self.updateOrAddPurchase()
+   }
+    
+   func handleDeleteTapped() {
+     self.removePurchase()
+   }
 }

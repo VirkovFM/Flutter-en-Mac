@@ -1,12 +1,4 @@
-//
-//  RegisterView.swift
-//  Flutter en Mac
-//
-//  Created by ISSC_611_2023 on 26/04/23.
-//
-
 import SwiftUI
-
 
 enum Mode {
   case new
@@ -21,22 +13,7 @@ enum Action {
 
 
 struct RegisterView: View {
-    @State private var IDUsuario = ""
-    @State private var Nombre = ""
-    @State private var Apellido = ""
-    @State private var Edad = ""
-    @State private var Genero = ""
-    @State private var Email = ""
-    @State private var Contrasena = ""
-    @State private var Rol = ""
-    @State private var showError = false
-    @State private var mostrarAlertaVacio = false //ALERT
-    // DROPDOWN
-        let options = ["Masculino", "Femenino"]
-            @State private var selectedOption = 0
-    
-    @State private var registerBool = false
-    
+    ///LO DEL PROFE
     @Environment(\.presentationMode) private var presentationMode
     @State var presentActionSheet = false
      
@@ -55,16 +32,30 @@ struct RegisterView: View {
           }else{
               //Se ejecuta el CREATE de CRUD
               viewModel.user.id = IDUsuario
-              /*self.presentActionSheet.toggle()*/
+              self.handleDeleteTapped()
               registerBool = true
           }
 
       }) {
           if mode == .edit{
-              Text("Delete")
+              Image(systemName: "trash").foregroundColor(Color.red)
           }
       }
     }
+    /////LO DEL PROFE FIN
+    @State private var IDUsuario = ""
+    
+    @State private var Genero = ""
+    
+    @State private var showError = false
+    @State private var mostrarAlertaVacio = false //ALERT
+    // DROPDOWN
+        let options = ["Masculino", "Femenino"]
+            @State private var selectedOption = 0
+    
+    @State private var registerBool = false
+    
+    
     
     var body: some View {
         ZStack{
@@ -89,13 +80,13 @@ struct RegisterView: View {
                 Form{
                     TextField("ID", text: $IDUsuario)
                     Section{
-                        TextField("NAME", text: $viewModel.user.name)
+                        TextField("NAME", text: $viewModel.user.Name)
                     }
                     Section{
-                        TextField("LAST NAME", text: $viewModel.user.lastName)
+                        TextField("LAST NAME", text: $viewModel.user.LastName)
                     }
                     Section{
-                        TextField("AGE", text: $Edad)
+                        TextField("AGE", text: $viewModel.user.Age)
                     }
                     // DROPDOWN ***********************
                     Picker(selection: $selectedOption, label: Text("Selecciona un genero")) {
@@ -106,13 +97,10 @@ struct RegisterView: View {
                     }.pickerStyle(MenuPickerStyle())
                     // ***************************
                     Section{
-                        TextField("EMAIL", text: $Email)
+                        TextField("EMAIL", text: $viewModel.user.Email)
                     }
                     Section{
-                        SecureField("PASSWORD", text: $Contrasena)
-                    }
-                    Section{
-                        TextField("ROL", text: $Rol)
+                        SecureField("PASSWORD", text: $viewModel.user.Password)
                     }
                     
                     
@@ -120,51 +108,46 @@ struct RegisterView: View {
                  .scrollContentBackground(.hidden)
                  .navigationBarItems(
                    trailing: deleteButton
-                 )
-                 .actionSheet(isPresented: $presentActionSheet) {
-                   ActionSheet(title: Text("Are you sure?"),
-                               buttons: [
-                                 .destructive(Text("Delete Movie"),
-                                              action: { self.handleDeleteTapped() }),
-                                 .cancel()
-                               ])
-                 }
+                 )//FORM
+                 
                 
                 Button(action:{
-                    print(selectedOption)
-                    Genero = String(selectedOption)
-                    if(IDUsuario == "" || viewModel.user.name == "" || viewModel.user.lastName == "" || Edad == "" || Genero == "" || Email == "" || Contrasena == "" || Rol == ""){
+                    //print(selectedOption)
+                    if(selectedOption == 0){
+                        viewModel.user.Gender = "Masculino"
+                    }
+                    else{
+                        viewModel.user.Gender = "Femenino"
+                    }
+                    if(IDUsuario == "" || viewModel.user.Name == "" || viewModel.user.LastName == "" || viewModel.user.Age == "" || viewModel.user.Gender == "" || viewModel.user.Email == "" || viewModel.user.Password == ""){
                         //Mpstrar alerta si los campos estan vacios
                         mostrarAlertaVacio = true
                     }else{
                         //Se ejecuta el CREATE de CRUD
                         viewModel.user.id = IDUsuario
-                        //self.handleDoneTapped()
-                        registerBool = true
+                        
+                        self.handleDoneTapped()
+                        //registerBool = true
                     }
                 }) {
                     Text(mode == .new ? "REGISTER" : "SAVE")
                         .fontWeight(.bold)
                     
-                }.buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlertaVacio){
+                }.buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlertaVacio){//BOTON
                     Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
-                }
+                }//style
                 
                 if(registerBool){
                     NavigationLink(destination: MenuAdmin(), isActive: $registerBool){
                         EmptyView()
                     }.hidden()
-                }
+                }//if
+                
             }
- 
         }
-
     }
     
-    
-    
     // Action Handlers
-    /*
     func handleDoneTapped() {
       self.viewModel.handleDoneTapped()
       self.dismiss()
@@ -179,14 +162,7 @@ struct RegisterView: View {
     func dismiss() {
       self.presentationMode.wrappedValue.dismiss()
     }
-    */
 }
-
-
-
-
-
-    
 
 
 struct RegisterView_Previews: PreviewProvider {

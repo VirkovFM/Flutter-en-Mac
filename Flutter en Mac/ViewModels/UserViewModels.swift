@@ -4,12 +4,12 @@ import FirebaseFirestore
  
 class UserViewModels: ObservableObject {
     
-    @Published var user: User
+    @Published var user: users
     @Published var modified = false
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(user: User = User(id: "", name: "", lastName: "", age: "", gender: "", email: "", password: "", rol: "")) {
+    init(user: users = users(id: "", Name: "", LastName: "", Age: "", Gender: "", Email: "", Password: "")) {
         self.user = user
         
         self.$user
@@ -24,19 +24,19 @@ class UserViewModels: ObservableObject {
     
     private var db = Firestore.firestore()
     
-    private func addUser(_ user: User) {
+    private func addUser(_ user: users) {
         do {
-            let _ = try db.collection("userlist").addDocument(from: user)
+            let _ = try db.collection("users").addDocument(from: user)
         }
         catch {
             print(error)
         }
     }
     
-    private func updatUser(_ user: User) {
+    private func updateUser(_ user: users) {
         if let documentId = user.id {
             do {
-                try db.collection("userlist").document(documentId).setData(from: user)
+                try db.collection("users").document(documentId).setData(from: user)
             }
             catch {
                 print(error)
@@ -44,24 +44,32 @@ class UserViewModels: ObservableObject {
         }
     }
     
-    private func createListUser(user: User) {
-        do {
-            let _ = try db.collection("userlist").addDocument(from: user)
-        } catch {
-            print(error)
-        }
+    private func updateOrAddUser() {
+      if let _ = user.id {
+        self.updateUser(self.user)
+      }
+      else {
+        addUser(user)
+      }
     }
-
-    private func deleteUser(user: User) {
-        if let documentId = user.id {
-            db.collection("userlist").document(documentId).delete { error in
-                if let error = error {
-                    print("Error deleting document: \(error)")
-                } else {
-                    print("Document successfully deleted.")
-                }
-            }
+     
+    private func removeUser() {
+      if let documentId = user.id {
+        db.collection("users").document(documentId).delete { error in
+          if let error = error {
+            print(error.localizedDescription)
+          }
         }
+      }
     }
-    
+     
+    // UI handlers
+     
+    func handleDoneTapped() {
+      self.updateOrAddUser()
+    }
+     
+    func handleDeleteTapped() {
+      self.removeUser()
+    }
 }
