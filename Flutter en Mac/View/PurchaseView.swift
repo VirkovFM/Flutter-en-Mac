@@ -65,7 +65,7 @@ struct PurchaseView: View {
                     TextField("IDA", text: $viewModel.purchase.idAdmin)
                 }
             }
-            .padding()
+            .padding(.vertical, 150)
             .scrollContentBackground(.hidden)
             .navigationBarItems(
               trailing: deleteButton

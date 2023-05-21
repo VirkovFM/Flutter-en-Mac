@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+enum Mode {
+  case new
+  case edit
+}
+ 
+enum Action {
+  case delete
+  case done
+  case cancel
+}
+
 struct ContentView: View {
     @State private var email = ""
     @State private var contrasena = ""

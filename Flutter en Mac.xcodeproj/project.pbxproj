@@ -28,6 +28,7 @@
 		F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */; };
 		F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D329FA29F7496000536D77 /* PurchaseView.swift */; };
 		F62ACD552A197BA60070531A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F62ACD542A197BA60070531A /* GoogleService-Info.plist */; };
+		F62ACD572A19A9000070531A /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ACD562A19A9000070531A /* UsersListView.swift */; };
 		F64FBD5C2A161E2C000C297B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5B2A161E2C000C297B /* FirebaseAuth */; };
 		F64FBD5E2A161E2C000C297B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5D2A161E2C000C297B /* FirebaseFirestore */; };
 		F64FBD602A161E2C000C297B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5F2A161E2C000C297B /* FirebaseFirestoreSwift */; };
@@ -56,6 +57,7 @@
 		F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAdmin.swift; sourceTree = "<group>"; };
 		F1D329FA29F7496000536D77 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		F62ACD542A197BA60070531A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F62ACD562A19A9000070531A /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				F1483A9E29FA05A400CF8B3E /* SalesView.swift */,
 				F1D329FA29F7496000536D77 /* PurchaseView.swift */,
 				C90C0A3629FC86EB00B2547A /* pruebas.swift */,
+				F62ACD562A19A9000070531A /* UsersListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				C9CC37192A16CACF008EE341 /* PurchaseViewModel.swift in Sources */,
 				C9C8A69A2A16C1590046FEAA /* Purchase.swift in Sources */,
 				F1483A9929FA049300CF8B3E /* MenuRegister.swift in Sources */,
+				F62ACD572A19A9000070531A /* UsersListView.swift in Sources */,
 				C936FB492A1861B2007DC5C0 /* user.swift in Sources */,
 				C9C8A69C2A16C5620046FEAA /* UserViewModels.swift in Sources */,
 				C9C8A6922A16C0D80046FEAA /* products.swift in Sources */,

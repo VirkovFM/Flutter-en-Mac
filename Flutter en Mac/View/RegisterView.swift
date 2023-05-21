@@ -1,15 +1,5 @@
 import SwiftUI
 
-enum Mode {
-  case new
-  case edit
-}
- 
-enum Action {
-  case delete
-  case done
-  case cancel
-}
 
 
 struct RegisterView: View {

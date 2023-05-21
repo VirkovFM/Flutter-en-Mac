@@ -7,6 +7,7 @@ class UserViewModels: ObservableObject {
     @Published var user: users
     @Published var modified = false
     
+    
     private var cancellables = Set<AnyCancellable>()
     
     init(user: users = users(id: "", ID: "", Name: "", LastName: "", Age: "", Gender: "", Email: "", Password: "")) {
