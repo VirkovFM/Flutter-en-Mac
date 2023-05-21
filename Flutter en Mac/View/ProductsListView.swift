@@ -2,8 +2,8 @@ import SwiftUI
 import Firebase
 
 
-struct UsersListView: View {
-    @StateObject var viewModel = UsersViewModel()
+struct ProductsListView: View {
+    @StateObject var viewModel = ProductsViewModel()
     @State var presentAddMovieSheet = false
 
     private var addButton: some View {
@@ -12,12 +12,12 @@ struct UsersListView: View {
         }
     }
 
-    private func userRowView(user: users) -> some View {
-        NavigationLink(destination: UserDetailsView(user: user)) {
+    private func productRowView(product: Product) -> some View {
+        NavigationLink(destination: ProductDetailsView(product: product)) {
             VStack(alignment: .leading) {
-                Text(user.Name)
+                Text(product.Name)
                     .font(.headline)
-                Text(user.Email)
+                Text(product.Description)
                     .font(.subheadline)
             }
         }
@@ -33,7 +33,7 @@ struct UsersListView: View {
                     Spacer(minLength: 30)
                     
                     
-                    Text("USER LIST")
+                    Text("PRODUCT LIST")
                         .font(.system(size: 30))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
@@ -46,14 +46,14 @@ struct UsersListView: View {
                         .offset(x: -39, y: 10)
                     
                     List {
-                        ForEach(viewModel.Users) { user in
-                            userRowView(user: user)
+                        ForEach(viewModel.Products) { product in
+                            productRowView(product: product)
                         }
                         .onDelete { indexSet in
                             viewModel.removeMovies(atOffsets: indexSet)
                         }
                     }
-                    .scrollContentBackground(.hidden)                    
+                    .scrollContentBackground(.hidden)
                     /*.navigationBarTitle(Text("USER LIST")
                         .font(.system(size: 50))
                         .fontWeight(.bold)
@@ -61,13 +61,13 @@ struct UsersListView: View {
                     )*/
                     .navigationBarItems(trailing: addButton)
                     .onAppear {
-                        print("MoviesListView appears. Subscribing to data updates.")
+                        print("ProductsListView appears. Subscribing to data updates.")
                         self.viewModel.subscribe()
                     }
                     .sheet(isPresented: self.$presentAddMovieSheet) {
                         
                         
-                        RegisterView()
+                        ProductView()
                     }
                 }
             })
@@ -76,9 +76,8 @@ struct UsersListView: View {
 }
 
 
-struct UsersListView_Previews: PreviewProvider {
+struct ProductsListView_Previews: PreviewProvider {
     static var previews: some View {
         UsersListView()
     }
 }
-

@@ -29,7 +29,7 @@ struct MenuRegister: View {
                     NavigationLink(destination: UsersListView(), label: {Text("USER")}).padding().buttonStyle(FilledButtonStyle())
                         .fontWeight(.bold)
                     
-                    NavigationLink(destination: ProductView(), label: {Text("PRODUCT")}).padding().buttonStyle(FilledButtonStyle())
+                    NavigationLink(destination: ProductsListView(), label: {Text("PRODUCT")}).padding().buttonStyle(FilledButtonStyle())
                         .fontWeight(.bold)
                     
                 })

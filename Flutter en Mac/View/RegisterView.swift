@@ -85,7 +85,7 @@ struct RegisterView: View {
                 }) {
                     if mode == .edit{
                         Image(systemName: "trash").foregroundColor(Color.red)
-                            .offset(x:160, y: 30)
+                            //.offset(x:160, y: 30)
                     
                     
                     }

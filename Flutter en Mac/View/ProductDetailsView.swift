@@ -1,10 +1,10 @@
 import SwiftUI
  
-struct UserDetailsView: View {
+struct ProductDetailsView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var presentEditUserSheet = false
      
-    var user: users
+    var product: Product
      
     private func editButton(action: @escaping () -> Void) -> some View {
       Button(action: { action() }) {
@@ -16,16 +16,16 @@ struct UserDetailsView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             ZStack{
                 Form {
-                  Section(header: Text("User")) {
-                      Text(user.Name)
-                      Text(user.LastName)
+                  Section(header: Text("Product")) {
+                      Text(product.Name)
+                      Text(product.Description)
                        
                   }
                    
-                  Section(header: Text("Email")) {
-                      Text(user.Email)
+                  Section(header: Text("Price")) {
+                      Text(product.Price)
                   }
-                }.scrollContentBackground(.hidden) 
+                }.scrollContentBackground(.hidden)
             }
       )
       //.navigationBarTitle(user.Name)
@@ -36,7 +36,7 @@ struct UserDetailsView: View {
           print("UserDetailsView.onAppear() for \(self.user.Name)")
       }*/
       .onDisappear() {
-        print("UserDetailsView.onDisappear()")
+        print("ProductDetailsView.onDisappear()")
       }
       .sheet(isPresented: self.$presentEditUserSheet) {
           /*
@@ -46,7 +46,7 @@ struct UserDetailsView: View {
               EmptyView()
           }.hidden()
           */
-        RegisterView(viewModel: UserViewModels(user: user), mode: .edit) { result in
+        ProductView(viewModel: ProductViewModels(product: product), mode: .edit) { result in
           if case .success(let action) = result, action == .delete {
             self.presentationMode.wrappedValue.dismiss()
           }
@@ -56,12 +56,12 @@ struct UserDetailsView: View {
      
   }
  
-struct UserDetailsView_Previews: PreviewProvider {
+struct ProductDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let user = users(id: "", ID: "", Name: "", LastName: "", Age: "", Gender: "", Email: "", Password: "")
+        let product = Product(id: "", ID: "", Name: "", Description: "", Units: "", Cost: "", Price: "", Unity: "")
         return
           NavigationView {
-            UserDetailsView(user: user)
+            ProductDetailsView(product: product)
           }
     }
 }

@@ -17,31 +17,10 @@ struct ProductView: View {
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
-    var deleteButton: some View {
-        /*if mode == .edit {
-          
-        }*/
-      Button(action: {
-          if (Id == ""){
-              mostrarAlertaVacio = true
-          }else{
-              //Se ejecuta el CREATE de CRUD
-              viewModel.product.id = Id
-              viewModel.product.ID = Id
-              self.handleDeleteTapped()
-              registerBool = true
-          }
-
-      }) {
-          if mode == .edit{
-              Image(systemName: "trash").foregroundColor(Color.red)
-          }
-      }
-    }
+    
     /////LO DEL PROFE FIN
     
     
-    @State private var Id = ""
     @State private var showAlert = false
     @State private var mostrarAlertaVacio = false //ALERT
     
@@ -65,10 +44,27 @@ struct ProductView: View {
                 .frame(width: 220)
                 .offset(x: -140)
                
-            
+            Button(action: {
+                if (viewModel.product.id == ""){
+                    mostrarAlertaVacio = true
+                }else{
+                    //Se ejecuta el CREATE de CRUD
+                    viewModel.product.id = viewModel.product.ID
+                    self.handleDeleteTapped()
+                    
+                }
+
+            }) {
+                if mode == .edit{
+                    Image(systemName: "trash").foregroundColor(Color.red)
+                        //.offset(x:160, y: 30)
+                
+                
+                }
+            }
             
             Form{
-                TextField("ID", text: $Id)
+                TextField("ID", text: $viewModel.product.ID)
                 
                 Section{
                     TextField("Name", text: $viewModel.product.Name)
@@ -91,21 +87,18 @@ struct ProductView: View {
         
             }.padding()
                 .scrollContentBackground(.hidden)
-                .navigationBarItems(
-                  trailing: deleteButton
-                )//FORM
+                //FORM
                 .scrollContentBackground(.hidden)
                 
             
             Button(action:{
                 
-                if(Id == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Cost == "" || viewModel.product.Price == "" || viewModel.product.Unity == ""){
+                if(viewModel.product.ID == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Cost == "" || viewModel.product.Price == "" || viewModel.product.Unity == ""){
                     
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    viewModel.product.id = Id
-                    viewModel.product.ID = Id
+                    viewModel.product.id = viewModel.product.ID
                     self.handleDoneTapped()
                 }
             }) {
