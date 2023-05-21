@@ -69,8 +69,27 @@ struct RegisterView: View {
                     .background(Color.white)
                     .frame(width: 350)
                     .offset(x: -39, y: 10)
-                
-                
+                Button(action: {
+                    if (viewModel.user.ID == ""){
+                        mostrarAlertaVacio = true
+                    }else{
+                        //Se ejecuta el CREATE de CRUD
+                        viewModel.user.id = viewModel.user.ID
+                        self.handleDeleteTapped()
+                        registerBool = true
+                    }
+                    if mode == .edit{
+                        IDUsuario = viewModel.user.id ?? ""
+                    }
+
+                }) {
+                    if mode == .edit{
+                        Image(systemName: "trash").foregroundColor(Color.red)
+                            .offset(x:160, y: 30)
+                    
+                    
+                    }
+                }
                 Form{
                     TextField("ID", text: $viewModel.user.ID)
                     Section{
@@ -98,12 +117,14 @@ struct RegisterView: View {
                     }
                     
                     
+                    
                 }.padding()
                  .scrollContentBackground(.hidden)
                  .navigationBarItems(
                    trailing: deleteButton
                  )//FORM
                  
+                
                 
                 Button(action:{
                     //print(selectedOption)
@@ -113,13 +134,12 @@ struct RegisterView: View {
                     else{
                         viewModel.user.Gender = "Femenino"
                     }
-                    if(IDUsuario == "" || viewModel.user.Name == "" || viewModel.user.LastName == "" || viewModel.user.Age == "" || viewModel.user.Gender == "" || viewModel.user.Email == "" || viewModel.user.Password == ""){
+                    if(viewModel.user.ID == "" || viewModel.user.Name == "" || viewModel.user.LastName == "" || viewModel.user.Age == "" || viewModel.user.Gender == "" || viewModel.user.Email == "" || viewModel.user.Password == ""){
                         //Mpstrar alerta si los campos estan vacios
                         mostrarAlertaVacio = true
                     }else{
                         //Se ejecuta el CREATE de CRUD
-                        viewModel.user.id = IDUsuario
-                        viewModel.user.ID = IDUsuario
+                        viewModel.user.id = viewModel.user.ID
                         
                         self.handleDoneTapped()
                         //registerBool = true
