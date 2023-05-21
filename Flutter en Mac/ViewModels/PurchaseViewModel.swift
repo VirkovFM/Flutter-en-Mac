@@ -9,7 +9,7 @@ class PurchaseViewModels: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(purchase: Purchase = Purchase(id: "", ID: "", name: "", pieces: "", idAdmin: "")) {
+    init(purchase: Purchase = Purchase(id: "", ID: "", Name: "", Pieces: "", IdAdmin: "")) {
         self.purchase = purchase
         
         self.$purchase

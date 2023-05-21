@@ -68,25 +68,25 @@ struct SalesView: View {
                 TextField("ID", text: $Id)
                 
                 Section{
-                    TextField("NAME", text: $viewModel.sale.name)
+                    TextField("NAME", text: $viewModel.sale.Name)
                 }
                 Section{
-                    TextField("CANT", text: $viewModel.sale.cant)
+                    TextField("CANT", text: $viewModel.sale.Amount)
                 }
                 Section{
-                    TextField("ID Product", text: $viewModel.sale.idProduct)
+                    TextField("ID Product", text: $viewModel.sale.IdSale)
                 }
                 Section{
-                    TextField("ID Cliente", text: $viewModel.sale.idClient)
+                    TextField("ID Cliente", text: $viewModel.sale.IdBuy)
                 }
                 Section{
-                    TextField("PIECES", text: $viewModel.sale.pieces)
+                    TextField("PIECES", text: $viewModel.sale.Pieces)
                 }
                 Section{
-                    TextField("SUBTOTAL", text: $viewModel.sale.subtotal)
+                    TextField("SUBTOTAL", text: $viewModel.sale.Subtotal)
                 }
                 Section{
-                    TextField("TOTAL", text: $viewModel.sale.total)
+                    TextField("TOTAL", text: $viewModel.sale.Total)
                 }
                 
             }.padding()
@@ -100,7 +100,7 @@ struct SalesView: View {
             Button(action:{
                 
                 //Cambie en este pero no estoy del todo seguro si jale a como estan en las vistas
-                if(Id == "" || viewModel.sale.name == "" || viewModel.sale.cant == "" || viewModel.sale.idProduct == "" || viewModel.sale.idClient == "" || viewModel.sale.pieces == "" || viewModel.sale.subtotal == "" || viewModel.sale.total == ""){
+                if(Id == "" || viewModel.sale.Name == "" || viewModel.sale.Amount == "" || viewModel.sale.IdSale == "" || viewModel.sale.IdBuy == "" || viewModel.sale.Pieces == "" || viewModel.sale.Subtotal == "" || viewModel.sale.Total == ""){
                     showAlert = true
                 }else{
                     //Se ejecuta el CREATE de CRUD

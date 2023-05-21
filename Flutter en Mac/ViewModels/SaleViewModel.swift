@@ -9,7 +9,7 @@ class SaleViewModels: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(sale: Sale = Sale(id: "", ID: "", name: "", cant: "", idProduct: "", idClient: "", pieces: "", subtotal: "", total: "")) {
+    init(sale: Sale = Sale(id: "", ID: "", Name: "", Amount: "", IdSale: "", IdBuy: "", Pieces: "", Subtotal: "", Total: "")) {
         self.sale = sale
         
         self.$sale

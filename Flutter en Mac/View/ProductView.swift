@@ -71,22 +71,22 @@ struct ProductView: View {
                 TextField("ID", text: $Id)
                 
                 Section{
-                    TextField("Name", text: $viewModel.product.name)
+                    TextField("Name", text: $viewModel.product.Name)
                 }
                 Section{
-                    TextField("Description", text: $viewModel.product.description)
+                    TextField("Description", text: $viewModel.product.Description)
                 }
                 Section{
-                    TextField("Units", text: $viewModel.product.unit)
+                    TextField("Units", text: $viewModel.product.Units)
                 }
                 Section{
-                    TextField("Cost", text: $viewModel.product.cost)
+                    TextField("Cost", text: $viewModel.product.Cost)
                 }
                 Section{
-                    TextField("Price", text: $viewModel.product.price)
+                    TextField("Price", text: $viewModel.product.Price)
                 }
                 Section{
-                    TextField("Utility", text: $viewModel.product.utility)
+                    TextField("Utility", text: $viewModel.product.Unity)
                 }
         
             }.padding()
@@ -99,7 +99,7 @@ struct ProductView: View {
             
             Button(action:{
                 
-                if(Id == "" || viewModel.product.name == "" || viewModel.product.description == "" || viewModel.product.unit == "" || viewModel.product.cost == "" || viewModel.product.price == "" || viewModel.product.utility == ""){
+                if(Id == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Cost == "" || viewModel.product.Price == "" || viewModel.product.Unity == ""){
                     
                     mostrarAlertaVacio = true
                 }else{

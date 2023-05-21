@@ -9,7 +9,7 @@ class ProductViewModels: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(product: Product = Product(id: "", ID:"", name: "", description: "", unit: "", cost: "", price: "", utility: "")) {
+    init(product: Product = Product(id: "", ID:"", Name: "", Description: "", Units: "", Cost: "", Price: "", Unity: "")) {
         self.product = product
         
         self.$product

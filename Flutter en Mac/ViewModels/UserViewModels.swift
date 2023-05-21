@@ -73,4 +73,12 @@ class UserViewModels: ObservableObject {
     func handleDeleteTapped() {
       self.removeUser()
     }
+    
+    
+    
+    
+    
+    
+    
+    
 }
