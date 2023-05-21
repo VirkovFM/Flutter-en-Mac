@@ -26,7 +26,7 @@ struct MenuRegister: View {
                         .frame(width: 200)
                         .offset(x: -150, y: -220)
                     
-                    NavigationLink(destination: RegisterView(), label: {Text("USER")}).padding().buttonStyle(FilledButtonStyle())
+                    NavigationLink(destination: UsersListView(), label: {Text("USER")}).padding().buttonStyle(FilledButtonStyle())
                         .fontWeight(.bold)
                     
                     NavigationLink(destination: ProductView(), label: {Text("PRODUCT")}).padding().buttonStyle(FilledButtonStyle())

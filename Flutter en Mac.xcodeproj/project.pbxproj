@@ -29,6 +29,8 @@
 		F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D329FA29F7496000536D77 /* PurchaseView.swift */; };
 		F62ACD552A197BA60070531A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F62ACD542A197BA60070531A /* GoogleService-Info.plist */; };
 		F62ACD572A19A9000070531A /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ACD562A19A9000070531A /* UsersListView.swift */; };
+		F62ACD5D2A19DB720070531A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ACD5C2A19DB720070531A /* UsersViewModel.swift */; };
+		F62ACD5F2A19DD4E0070531A /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ACD5E2A19DD4E0070531A /* UserDetailsView.swift */; };
 		F64FBD5C2A161E2C000C297B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5B2A161E2C000C297B /* FirebaseAuth */; };
 		F64FBD5E2A161E2C000C297B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5D2A161E2C000C297B /* FirebaseFirestore */; };
 		F64FBD602A161E2C000C297B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5F2A161E2C000C297B /* FirebaseFirestoreSwift */; };
@@ -58,6 +60,8 @@
 		F1D329FA29F7496000536D77 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		F62ACD542A197BA60070531A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F62ACD562A19A9000070531A /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		F62ACD5C2A19DB720070531A /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		F62ACD5E2A19DD4E0070531A /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				C9C8A69D2A16C7A10046FEAA /* ProductViewModel.swift */,
 				C9CC37162A16CA90008EE341 /* SaleViewModel.swift */,
 				C9CC37182A16CACF008EE341 /* PurchaseViewModel.swift */,
+				F62ACD5C2A19DB720070531A /* UsersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 				F1D329FA29F7496000536D77 /* PurchaseView.swift */,
 				C90C0A3629FC86EB00B2547A /* pruebas.swift */,
 				F62ACD562A19A9000070531A /* UsersListView.swift */,
+				F62ACD5E2A19DD4E0070531A /* UserDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,8 +243,10 @@
 				F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */,
 				C9C8A6982A16C1310046FEAA /* Sale.swift in Sources */,
 				F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */,
+				F62ACD5F2A19DD4E0070531A /* UserDetailsView.swift in Sources */,
 				F1483A9B29FA053C00CF8B3E /* RegisterView.swift in Sources */,
 				F16E2C3F29F743550040FA4D /* ContentView.swift in Sources */,
+				F62ACD5D2A19DB720070531A /* UsersViewModel.swift in Sources */,
 				F16E2C3D29F743550040FA4D /* Flutter_en_MacApp.swift in Sources */,
 				C90C0A3729FC86EB00B2547A /* pruebas.swift in Sources */,
 				C9CC37192A16CACF008EE341 /* PurchaseViewModel.swift in Sources */,

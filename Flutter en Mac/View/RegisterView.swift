@@ -26,6 +26,9 @@ struct RegisterView: View {
               self.handleDeleteTapped()
               registerBool = true
           }
+          if mode == .edit{
+              IDUsuario = viewModel.user.id ?? ""
+          }
 
       }) {
           if mode == .edit{
@@ -69,7 +72,7 @@ struct RegisterView: View {
                 
                 
                 Form{
-                    TextField("ID", text: $IDUsuario)
+                    TextField("ID", text: $viewModel.user.ID)
                     Section{
                         TextField("NAME", text: $viewModel.user.Name)
                     }

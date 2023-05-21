@@ -1,62 +1,84 @@
-/*import SwiftUI
-//import SDWebImageSwiftUI
- 
-struct UserListView: View {
-    
-   
-  @Environment(\.presentationMode) var presentationMode
-  @State var presentEditBookSheet = false
-   
-   
-  var user: users
-   
-  private func editButton(action: @escaping () -> Void) -> some View {
-    Button(action: { action() }) {
-        Image(systemName: "square.and.pencil").font(.system(size: 20.0)).fontWeight(.bold)
-    }.foregroundColor(Color.black)
-  }
-   
-  var body: some View {
-      
-    Form {
-             
-        Section(header: Text("ID")) {
-                     Text(user.ID)
-                     Text(user.Email)
-                      
-                 }
-                  
-                 Section(header: Text("Name")) {
-                     Text(user.Name)
-                 }
-    }
-    .navigationBarTitle(user.Name)
-    .navigationBarItems(trailing: editButton {
-      self.presentEditBookSheet.toggle()
-    })
-    .onAppear() {
-      print("BookDetailsView.onAppear() for \(self.user.Name)")
-    }
-    .onDisappear() {
-      print("BookDetailsView.onDisappear()")
-    }
-    .sheet(isPresented: self.$presentEditBookSheet) {
-        RegisterView(viewModel: UserViewModels(user: user), mode: .edit) { result in
-        if case .success(let action) = result, action == .delete {
-          self.presentationMode.wrappedValue.dismiss()
-        }
-      }
-    }
-  }
-}*/
+import SwiftUI
+import Firebase
 
- 
+
+struct UsersListView: View {
+    @StateObject var viewModel = UsersViewModel()
+    @State var presentAddMovieSheet = false
+
+    private var addButton: some View {
+        Button(action: { self.presentAddMovieSheet.toggle() }) {
+            Image(systemName: "plus").foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+        }
+    }
+
+    private func userRowView(user: users) -> some View {
+        NavigationLink(destination: UserDetailsView(user: user)) {
+            VStack(alignment: .leading) {
+                Text(user.Name)
+                    .font(.headline)
+                Text(user.Email)
+                    .font(.subheadline)
+            }
+        }
+    }
+
+    var body: some View {
+        //NavigationView {
+        Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
+            ZStack {
+                
+
+                VStack {
+                    Spacer(minLength: 30)
+                    
+                    
+                    Text("INTERFACE REGISTER")
+                        .font(.system(size: 30))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                        .offset(x:-49, y: 30)
+                        .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+                    
+                    Divider()
+                        .background(Color.white)
+                        .frame(width: 350)
+                        .offset(x: -39, y: 10)
+                    
+                    List {
+                        ForEach(viewModel.Users) { user in
+                            userRowView(user: user)
+                        }
+                        .onDelete { indexSet in
+                            viewModel.removeMovies(atOffsets: indexSet)
+                        }
+                    }
+                    .scrollContentBackground(.hidden)                    
+                    /*.navigationBarTitle(Text("USER LIST")
+                        .font(.system(size: 50))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+                    )*/
+                    .navigationBarItems(trailing: addButton)
+                    .onAppear {
+                        print("MoviesListView appears. Subscribing to data updates.")
+                        self.viewModel.subscribe()
+                    }
+                    .sheet(isPresented: self.$presentAddMovieSheet) {
+                        
+                        
+                        RegisterView()
+                    }
+                }
+            })
+        //}
+    }
+}
+
+
 struct UsersListView_Previews: PreviewProvider {
-     static var previews: some View {
-         let user = users(ID: "1", Name: "", LastName: "", Age: "", Gender: "", Email: "", Password: "")
-         return
-           NavigationView {
-         UserListView(user: user)
-           }
-     }
- }
+    static var previews: some View {
+        UsersListView()
+    }
+}
+
