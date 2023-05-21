@@ -9,7 +9,7 @@ class SaleViewModels: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(sale: Sale = Sale(id: "", name: "", cant: "", idProduct: "", idClient: "", pieces: "", subtotal: "", total: "")) {
+    init(sale: Sale = Sale(id: "", ID: "", name: "", cant: "", idProduct: "", idClient: "", pieces: "", subtotal: "", total: "")) {
         self.sale = sale
         
         self.$sale
@@ -26,7 +26,7 @@ class SaleViewModels: ObservableObject {
     
     private func addSale(_ sale: Sale) {
         do {
-            let _ = try db.collection("salelist").addDocument(from: sale)
+            let _ = try db.collection("sales").addDocument(from: sale)
         }
         catch {
             print(error)
@@ -36,7 +36,7 @@ class SaleViewModels: ObservableObject {
     private func updateSale(_ sale: Sale) {
         if let documentId = sale.id {
             do {
-                try db.collection("salelist").document(documentId).setData(from: sale)
+                try db.collection("sales").document(documentId).setData(from: sale)
             }
             catch {
                 print(error)
@@ -44,23 +44,34 @@ class SaleViewModels: ObservableObject {
         }
     }
     
-    private func createListSale(sale: Sale) {
-        do {
-            let _ = try db.collection("salelist").addDocument(from: sale)
-        } catch {
-            print(error)
-        }
-    }
-
-    private func deleteSale(sale: Sale) {
-        if let documentId = sale.id {
-            db.collection("salelist").document(documentId).delete { error in
-                if let error = error {
-                    print("Error deleting document: \(error)")
-                } else {
-                    print("Document successfully deleted.")
-                }
-            }
-        }
-    }
+    
+   private func updateOrAddSale() {
+     if let _ = sale.id {
+       self.updateSale(self.sale)
+     }
+     else {
+       addSale(sale)
+     }
+   }
+    
+   private func removeSale() {
+     if let documentId = sale.id {
+       db.collection("sales").document(documentId).delete { error in
+         if let error = error {
+           print(error.localizedDescription)
+         }
+       }
+     }
+   }
+    
+   // UI handlers
+    
+   func handleDoneTapped() {
+     self.updateOrAddSale()
+   }
+    
+   func handleDeleteTapped() {
+     self.removeSale()
+   }
+    
 }

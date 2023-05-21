@@ -1,10 +1,3 @@
-//
-//  PurchaseView.swift
-//  Flutter en Mac
-//
-//  Created by ISSC_611_2023 on 24/04/23.
-//
-
 import SwiftUI
 
 struct PurchaseView: View {
@@ -28,6 +21,7 @@ struct PurchaseView: View {
           }else{
               //Se ejecuta el CREATE de CRUD
               viewModel.purchase.id = idProduct
+              viewModel.purchase.ID = idProduct
               self.handleDeleteTapped()
           }
 
@@ -71,7 +65,7 @@ struct PurchaseView: View {
                     TextField("IDA", text: $viewModel.purchase.idAdmin)
                 }
             }
-            .padding(.vertical, 150)
+            .padding()
             .scrollContentBackground(.hidden)
             .navigationBarItems(
               trailing: deleteButton
@@ -86,6 +80,7 @@ struct PurchaseView: View {
                 }
                 else{
                     viewModel.purchase.id = idProduct
+                    viewModel.purchase.ID = idProduct
                     self.handleDoneTapped()
                 }
                 

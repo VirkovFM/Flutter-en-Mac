@@ -9,20 +9,43 @@ import SwiftUI
 
 struct SalesView: View {
     
+    ///LO DEL PROFE
+    @Environment(\.presentationMode) private var presentationMode
+    @State var presentActionSheet = false
+     
+    //VIewModel
+    @ObservedObject var viewModel = SaleViewModels()
+    var mode: Mode = .new
+    var completionHandler: ((Result<Action, Error>) -> Void)?
+    
+    var deleteButton: some View {
+        /*if mode == .edit {
+          
+        }*/
+      Button(action: {
+          if (Id == ""){
+              mostrarAlertaVacio = true
+          }else{
+              //Se ejecuta el CREATE de CRUD
+              viewModel.sale.id = Id
+              viewModel.sale.ID = Id
+              self.handleDeleteTapped()
+              registerBool = true
+          }
+
+      }) {
+          if mode == .edit{
+              Image(systemName: "trash").foregroundColor(Color.red)
+          }
+      }
+    }
+    /////LO DEL PROFE FIN
+    
     @State private var Id = ""
-    @State private var name = ""
-    @State private var quantity = ""
-    @State private var IDV = ""
-    @State private var IDC = ""
-    @State private var pieces = ""
-    @State private var subtotal = ""
-    @State private var total = ""
     @State private var showAlert = false
     
     @State private var registerBool = false
-    
-    //VIewModel
-    @ObservedObject var viewModel = SaleViewModels()
+    @State private var mostrarAlertaVacio = false //ALERT
     
     var body: some View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
@@ -45,44 +68,49 @@ struct SalesView: View {
                 TextField("ID", text: $Id)
                 
                 Section{
-                    TextField("NAME", text: $name)
+                    TextField("NAME", text: $viewModel.sale.name)
                 }
                 Section{
-                    TextField("CANT", text: $quantity)
+                    TextField("CANT", text: $viewModel.sale.cant)
                 }
                 Section{
-                    TextField("IDV", text: $IDV)
+                    TextField("ID Product", text: $viewModel.sale.idProduct)
                 }
                 Section{
-                    TextField("IDC", text: $IDC)
+                    TextField("ID Cliente", text: $viewModel.sale.idClient)
                 }
                 Section{
-                    TextField("PIECES", text: $pieces)
+                    TextField("PIECES", text: $viewModel.sale.pieces)
                 }
                 Section{
-                    TextField("SUBTOTAL", text: $subtotal)
+                    TextField("SUBTOTAL", text: $viewModel.sale.subtotal)
                 }
                 Section{
-                    TextField("TOTAL", text: $total)
+                    TextField("TOTAL", text: $viewModel.sale.total)
                 }
                 
-            }.padding().scrollContentBackground(.hidden)
+            }.padding()
+                .scrollContentBackground(.hidden)
+                .navigationBarItems(
+                  trailing: deleteButton
+                )//FORM
+                .scrollContentBackground(.hidden)
                 
             
             Button(action:{
                 
                 //Cambie en este pero no estoy del todo seguro si jale a como estan en las vistas
-                if(Id == "" || name == "" || quantity == "" || IDV == "" || IDC == "" || pieces == "" || subtotal == "" || total == ""){
+                if(Id == "" || viewModel.sale.name == "" || viewModel.sale.cant == "" || viewModel.sale.idProduct == "" || viewModel.sale.idClient == "" || viewModel.sale.pieces == "" || viewModel.sale.subtotal == "" || viewModel.sale.total == ""){
                     showAlert = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    
-                    registerBool = true
+                    viewModel.sale.id = Id
+                    viewModel.sale.ID = Id
+                    self.handleDoneTapped()
                 }
             }) {
-                Text("REGISTER")
-                    .fontWeight(.bold)
-                
+                Text(mode == .new ? "REGISTER" : "SAVE")
+                    .fontWeight(.bold)        
             }.buttonStyle(FilledButtonStyle()).alert(isPresented: $showAlert){
                 Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
             }
@@ -97,7 +125,27 @@ struct SalesView: View {
             }*/
         })
     }
+    
+    // Action Handlers
+    func handleDoneTapped() {
+      self.viewModel.handleDoneTapped()
+      self.dismiss()
+    }
+     
+    func handleDeleteTapped() {
+      viewModel.handleDeleteTapped()
+      self.dismiss()
+      self.completionHandler?(.success(.delete))
+    }
+     
+    func dismiss() {
+      self.presentationMode.wrappedValue.dismiss()
+    }
+    
 }
+
+
+
 struct SalesView_Previews: PreviewProvider {
     static var previews: some View {
         SalesView()

@@ -8,14 +8,40 @@
 import SwiftUI
 
 struct ProductView: View {
+    ///LO DEL PROFE
+    @Environment(\.presentationMode) private var presentationMode
+    @State var presentActionSheet = false
+     
+    //VIewModel
+    @ObservedObject var viewModel = ProductViewModels()
+    var mode: Mode = .new
+    var completionHandler: ((Result<Action, Error>) -> Void)?
+    
+    var deleteButton: some View {
+        /*if mode == .edit {
+          
+        }*/
+      Button(action: {
+          if (Id == ""){
+              mostrarAlertaVacio = true
+          }else{
+              //Se ejecuta el CREATE de CRUD
+              viewModel.product.id = Id
+              viewModel.product.ID = Id
+              self.handleDeleteTapped()
+              registerBool = true
+          }
+
+      }) {
+          if mode == .edit{
+              Image(systemName: "trash").foregroundColor(Color.red)
+          }
+      }
+    }
+    /////LO DEL PROFE FIN
+    
     
     @State private var Id = ""
-    @State private var name = ""
-    @State private var description = ""
-    @State private var units = ""
-    @State private var cost = ""
-    @State private var price = ""
-    @State private var utility = ""
     @State private var showAlert = false
     @State private var mostrarAlertaVacio = false //ALERT
     
@@ -45,39 +71,46 @@ struct ProductView: View {
                 TextField("ID", text: $Id)
                 
                 Section{
-                    TextField("Name", text: $name)
+                    TextField("Name", text: $viewModel.product.name)
                 }
                 Section{
-                    TextField("Description", text: $description)
+                    TextField("Description", text: $viewModel.product.description)
                 }
                 Section{
-                    TextField("Units", text: $units)
+                    TextField("Units", text: $viewModel.product.unit)
                 }
                 Section{
-                    TextField("Cost", text: $cost)
+                    TextField("Cost", text: $viewModel.product.cost)
                 }
                 Section{
-                    TextField("Price", text: $price)
+                    TextField("Price", text: $viewModel.product.price)
                 }
                 Section{
-                    TextField("Utility", text: $utility)
+                    TextField("Utility", text: $viewModel.product.utility)
                 }
         
-            }.padding().scrollContentBackground(.hidden)
+            }.padding()
+                .scrollContentBackground(.hidden)
+                .navigationBarItems(
+                  trailing: deleteButton
+                )//FORM
+                .scrollContentBackground(.hidden)
                 
             
             Button(action:{
                 
-                if(Id == "" || name == "" || description == "" || units == "" || cost == "" || price == "" || utility == ""){
+                if(Id == "" || viewModel.product.name == "" || viewModel.product.description == "" || viewModel.product.unit == "" || viewModel.product.cost == "" || viewModel.product.price == "" || viewModel.product.utility == ""){
                     
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    
-                    registerBool = true
+                    viewModel.product.id = Id
+                    viewModel.product.ID = Id
+                    self.handleDoneTapped()
                 }
             }) {
-                Text("REGISTER")
+                Text(mode == .new ? "REGISTER" : "SAVE")
+                    .fontWeight(.bold)
             }.buttonStyle(FilledButtonStyle()).alert(isPresented: $mostrarAlertaVacio){
                 Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
             }
@@ -90,6 +123,26 @@ struct ProductView: View {
             
         })
     }
+    
+    // Action Handlers
+    func handleDoneTapped() {
+      self.viewModel.handleDoneTapped()
+      self.dismiss()
+    }
+     
+    func handleDeleteTapped() {
+      viewModel.handleDeleteTapped()
+      self.dismiss()
+      self.completionHandler?(.success(.delete))
+    }
+     
+    func dismiss() {
+      self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    
+    
+    
 }
 
 struct ProductView_Previews: PreviewProvider {

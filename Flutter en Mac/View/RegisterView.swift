@@ -32,6 +32,7 @@ struct RegisterView: View {
           }else{
               //Se ejecuta el CREATE de CRUD
               viewModel.user.id = IDUsuario
+              viewModel.user.ID = IDUsuario
               self.handleDeleteTapped()
               registerBool = true
           }
@@ -125,6 +126,7 @@ struct RegisterView: View {
                     }else{
                         //Se ejecuta el CREATE de CRUD
                         viewModel.user.id = IDUsuario
+                        viewModel.user.ID = IDUsuario
                         
                         self.handleDoneTapped()
                         //registerBool = true
