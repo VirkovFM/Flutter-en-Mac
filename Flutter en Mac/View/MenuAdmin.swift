@@ -18,7 +18,7 @@ struct MenuAdmin: View {
                     NavigationLink(destination: MenuRegister(), label: {Text("REGISTER")}).padding().buttonStyle(FilledButtonStyle())
                         .fontWeight(.bold)
                     
-                    NavigationLink(destination: SalesView(), label: {Text("SALES")}).padding().buttonStyle(FilledButtonStyle())
+                    NavigationLink(destination: SalesListView(), label: {Text("SALES")}).padding().buttonStyle(FilledButtonStyle())
                         .fontWeight(.bold)
                     
                     NavigationLink(destination: PurchaseView(), label: {Text("PURCHASE")}).padding().buttonStyle(FilledButtonStyle())

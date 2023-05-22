@@ -18,30 +18,8 @@ struct SalesView: View {
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
-    var deleteButton: some View {
-        /*if mode == .edit {
-          
-        }*/
-      Button(action: {
-          if (Id == ""){
-              mostrarAlertaVacio = true
-          }else{
-              //Se ejecuta el CREATE de CRUD
-              viewModel.sale.id = Id
-              viewModel.sale.ID = Id
-              self.handleDeleteTapped()
-              registerBool = true
-          }
-
-      }) {
-          if mode == .edit{
-              Image(systemName: "trash").foregroundColor(Color.red)
-          }
-      }
-    }
     /////LO DEL PROFE FIN
     
-    @State private var Id = ""
     @State private var showAlert = false
     
     @State private var registerBool = false
@@ -63,9 +41,27 @@ struct SalesView: View {
             .offset(x: -150 ,y: 15)
             .frame(width: 200)
             
+            Button(action: {
+                if (viewModel.sale.ID == ""){
+                    mostrarAlertaVacio = true
+                }else{
+                    //Se ejecuta el CREATE de CRUD
+                    self.handleDeleteTapped()
+                    
+                }
+
+            }) {
+                if mode == .edit{
+                    Image(systemName: "trash").foregroundColor(Color.red)
+                        //.offset(x:160, y: 30)
+                
+                
+                }
+            }
+            
             Form{
                 
-                TextField("ID", text: $Id)
+                TextField("ID", text: $viewModel.sale.ID)
                 
                 Section{
                     TextField("NAME", text: $viewModel.sale.Name)
@@ -91,21 +87,20 @@ struct SalesView: View {
                 
             }.padding()
                 .scrollContentBackground(.hidden)
-                .navigationBarItems(
-                  trailing: deleteButton
-                )//FORM
+                //FORM
                 .scrollContentBackground(.hidden)
                 
             
             Button(action:{
                 
                 //Cambie en este pero no estoy del todo seguro si jale a como estan en las vistas
-                if(Id == "" || viewModel.sale.Name == "" || viewModel.sale.Amount == "" || viewModel.sale.IdSale == "" || viewModel.sale.IdBuy == "" || viewModel.sale.Pieces == "" || viewModel.sale.Subtotal == "" || viewModel.sale.Total == ""){
+                if(viewModel.sale.ID == "" || viewModel.sale.Name == "" || viewModel.sale.Amount == "" || viewModel.sale.IdSale == "" || viewModel.sale.IdBuy == "" || viewModel.sale.Pieces == "" || viewModel.sale.Subtotal == "" || viewModel.sale.Total == ""){
                     showAlert = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    viewModel.sale.id = Id
-                    viewModel.sale.ID = Id
+                    if (mode == .new){
+                        viewModel.sale.id = viewModel.sale.ID
+                    }
                     self.handleDoneTapped()
                 }
             }) {

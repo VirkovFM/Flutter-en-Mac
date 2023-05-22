@@ -74,7 +74,6 @@ struct RegisterView: View {
                         mostrarAlertaVacio = true
                     }else{
                         //Se ejecuta el CREATE de CRUD
-                        viewModel.user.id = viewModel.user.ID
                         self.handleDeleteTapped()
                         registerBool = true
                     }
@@ -139,7 +138,9 @@ struct RegisterView: View {
                         mostrarAlertaVacio = true
                     }else{
                         //Se ejecuta el CREATE de CRUD
-                        viewModel.user.id = viewModel.user.ID
+                        if (mode == .new){
+                            viewModel.user.id = viewModel.user.ID
+                        }
                         
                         self.handleDoneTapped()
                         //registerBool = true

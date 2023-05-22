@@ -45,11 +45,14 @@ struct ProductView: View {
                 .offset(x: -140)
                
             Button(action: {
-                if (viewModel.product.id == ""){
+                if (viewModel.product.ID == ""){
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    viewModel.product.id = viewModel.product.ID
+                    if (mode == .new){
+                        viewModel.product.id = viewModel.product.ID
+                    }
+                    
                     self.handleDeleteTapped()
                     
                 }
@@ -98,7 +101,6 @@ struct ProductView: View {
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    viewModel.product.id = viewModel.product.ID
                     self.handleDoneTapped()
                 }
             }) {
