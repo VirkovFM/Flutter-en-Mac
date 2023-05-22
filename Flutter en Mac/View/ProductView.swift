@@ -49,10 +49,7 @@ struct ProductView: View {
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
-                    if (mode == .new){
-                        viewModel.product.id = viewModel.product.ID
-                    }
-                    
+                                        
                     self.handleDeleteTapped()
                     
                 }
@@ -101,6 +98,9 @@ struct ProductView: View {
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
+                    if (mode == .new){
+                        viewModel.product.id = viewModel.product.ID
+                    }
                     self.handleDoneTapped()
                 }
             }) {

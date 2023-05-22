@@ -11,30 +11,10 @@ struct PurchaseView: View {
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
-    var deleteButton: some View {
-        /*if mode == .edit {
-          
-        }*/
-      Button(action: {
-          if (idProduct == ""){
-              mostrarAlertaVacio = true
-          }else{
-              //Se ejecuta el CREATE de CRUD
-              viewModel.purchase.id = idProduct
-              viewModel.purchase.ID = idProduct
-              self.handleDeleteTapped()
-          }
-
-      }) {
-          if mode == .edit{
-              Image(systemName: "trash").foregroundColor(Color.red)
-          }
-      }
-    }
+    
     /////LO DEL PROFE FIN
     
     
-    @State private var idProduct = ""
     
     @State private var mostrarAlertaVacio = false
     var body: some View {
@@ -53,8 +33,26 @@ struct PurchaseView: View {
                  .frame(width: 300)
                  .offset(x: -150, y: 70)
             
+            Button(action: {
+                if (viewModel.purchase.ID == ""){
+                    mostrarAlertaVacio = true
+                }else{
+                    //Se ejecuta el CREATE de CRUD
+                    self.handleDeleteTapped()
+                    
+                }
+
+            }) {
+                if mode == .edit{
+                    Image(systemName: "trash").foregroundColor(Color.red)
+                        //.offset(x:160, y: 30)
+                
+                
+                }
+            }
+            
             Form{
-                TextField("ID PRODUCT", text: $idProduct)
+                TextField("ID PRODUCT", text: $viewModel.purchase.ID)
                 Section{
                     TextField("NAME", text: $viewModel.purchase.Name)
                 }
@@ -67,20 +65,19 @@ struct PurchaseView: View {
             }
             .padding(.vertical, 150)
             .scrollContentBackground(.hidden)
-            .navigationBarItems(
-              trailing: deleteButton
-            )//FORM
+            //FORM
             .scrollContentBackground(.hidden)
             
             Button(action:{
             
-                if(idProduct == "" || viewModel.purchase.Name == "" || viewModel.purchase.Pieces == "" || viewModel.purchase.IdAdmin == ""){
+                if(viewModel.purchase.ID == "" || viewModel.purchase.Name == "" || viewModel.purchase.Pieces == "" || viewModel.purchase.IdAdmin == ""){
                     mostrarAlertaVacio = true
                     
                 }
                 else{
-                    viewModel.purchase.id = idProduct
-                    viewModel.purchase.ID = idProduct
+                    if (mode == .new){
+                        viewModel.purchase.id = viewModel.purchase.ID
+                    }
                     self.handleDoneTapped()
                 }
                 
