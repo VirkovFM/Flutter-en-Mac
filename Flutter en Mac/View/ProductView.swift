@@ -23,7 +23,9 @@ struct ProductView: View {
     
     @State private var showAlert = false
     @State private var mostrarAlertaVacio = false //ALERT
-    
+    // DROPDOWN
+        let options = ["Masculino", "Femenino"]
+            @State private var selectedOption = 0
     
     @State private var registerBool = false
     
@@ -75,9 +77,14 @@ struct ProductView: View {
                 Section{
                     TextField("Category", text: $viewModel.product.Category)
                 }
-                Section{
-                    TextField("Gender", text: $viewModel.product.Gender)
-                }
+                // DROPDOWN ***********************
+                Picker(selection: $selectedOption, label: Text("Selecciona un genero")) {
+                    ForEach(0..<options.count) {
+                        index in
+                        Text(options[index])
+                    }
+                }.pickerStyle(MenuPickerStyle())
+                // ***************************
                 Section{
                     TextField("Type", text: $viewModel.product.Types)
                 }
@@ -98,6 +105,13 @@ struct ProductView: View {
                 
             
             Button(action:{
+                //genero
+                if(selectedOption == 0){
+                    viewModel.product.Gender = "Masculino"
+                }
+                else{
+                    viewModel.product.Gender = "Femenino"
+                }
                 
                 if(viewModel.product.ID == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Category == "" || viewModel.product.Gender == "" || viewModel.product.Types == "" || viewModel.product.Units == "" || viewModel.product.Price == ""){
                     
