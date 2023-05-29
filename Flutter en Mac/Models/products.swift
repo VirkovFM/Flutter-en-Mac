@@ -6,10 +6,12 @@ struct Product: Identifiable, Codable {
     var ID: String
     var Name: String
     var Description: String
+    var Category: String
+    var Gender: String
+    var Types: String
     var Units: String
-    var Cost: String
     var Price: String
-    var Unity: String
+    var TotalFinal: String
 
 
     enum CodingKeys: String, CodingKey {
@@ -17,9 +19,11 @@ struct Product: Identifiable, Codable {
         case ID
         case Name
         case Description
+        case Category
+        case Gender
+        case Types
         case Units
-        case Cost
         case Price
-        case Unity
+        case TotalFinal
       }
 }

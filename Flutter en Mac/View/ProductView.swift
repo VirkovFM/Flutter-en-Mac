@@ -73,17 +73,23 @@ struct ProductView: View {
                     TextField("Description", text: $viewModel.product.Description)
                 }
                 Section{
+                    TextField("Category", text: $viewModel.product.Category)
+                }
+                Section{
+                    TextField("Gender", text: $viewModel.product.Gender)
+                }
+                Section{
+                    TextField("Type", text: $viewModel.product.Types)
+                }
+                Section{
                     TextField("Units", text: $viewModel.product.Units)
                 }
                 Section{
-                    TextField("Cost", text: $viewModel.product.Cost)
+                    TextField("Costo", text: $viewModel.product.Price)
                 }
-                Section{
-                    TextField("Price", text: $viewModel.product.Price)
-                }
-                Section{
-                    TextField("Utility", text: $viewModel.product.Unity)
-                }
+                
+                
+                
         
             }.padding()
                 .scrollContentBackground(.hidden)
@@ -93,11 +99,12 @@ struct ProductView: View {
             
             Button(action:{
                 
-                if(viewModel.product.ID == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Cost == "" || viewModel.product.Price == "" || viewModel.product.Unity == ""){
+                if(viewModel.product.ID == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Category == "" || viewModel.product.Gender == "" || viewModel.product.Types == "" || viewModel.product.Units == "" || viewModel.product.Price == ""){
                     
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
+                    viewModel.product.TotalFinal = viewModel.product.Price //ASIGNAT TOTAL ESTUPIDO
                     if (mode == .new){
                         viewModel.product.id = viewModel.product.ID
                     }

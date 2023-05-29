@@ -58,7 +58,7 @@ struct ProductDetailsView: View {
  
 struct ProductDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let product = Product(id: "", ID: "", Name: "", Description: "", Units: "", Cost: "", Price: "", Unity: "")
+        let product = Product(id: "", ID: "", Name: "", Description: "", Category: "", Gender: "", Types: "", Units: "", Price: "", TotalFinal: "")
         return
           NavigationView {
             ProductDetailsView(product: product)
