@@ -27,10 +27,10 @@ struct ProductView: View {
         let options = ["Masculino", "Femenino"]
             @State private var selectedOption = 0
     // DROPDOWN CAtegory
-        let optionsCategory = ["Buceo", "Montañismo"]
+        let optionsCategory = ["Buceo", "Montañismo/Ciclismo", "Esqui", "Pesca/Caza"]
             @State private var selectedOptionC = 0
     // DROPDOWN
-        let optionsType = ["Guantes", "Mangas"]
+        let optionsType = ["Guantes", "Mangas", "Shorts", "Playeras", "Pasamontañas", "Pants", "Cuerpo completo"]
             @State private var selectedOptionT = 0
     
     @State private var registerBool = false

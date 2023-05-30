@@ -55,20 +55,8 @@ struct RegisterView: View {
         ZStack{
             Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.all)
             VStack{
-                Spacer(minLength: 30)
+                customtitle(text: "INTERFACE REGISTER", x: -49, y: 30)
                 
-                
-                Text("INTERFACE REGISTER")
-                    .font(.system(size: 30))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                    .offset(x:-49, y: 30)
-                    .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
-                
-                Divider()
-                    .background(Color.white)
-                    .frame(width: 350)
-                    .offset(x: -39, y: 10)
                 Button(action: {
                     if (viewModel.user.ID == ""){
                         mostrarAlertaVacio = true

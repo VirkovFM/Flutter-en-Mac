@@ -116,6 +116,29 @@ struct FilledButtonStyle: ButtonStyle{
     }
 }
 
+struct customtitle: View{
+    let text: String
+    let x: CGFloat
+    let y: CGFloat
+    @State private var fieldValue:String = ""
+    var body: some View{
+        Spacer(minLength: 30)
+        
+        
+        Text(text)
+            .font(.system(size: 30))
+            .fontWeight(.bold)
+            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+            .offset(x: x, y: y)
+            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+        
+        Divider()
+            .background(Color.white)
+            .frame(width: 350)
+            .offset(x: -39, y: 10)
+    }
+}
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
