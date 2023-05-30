@@ -54,20 +54,18 @@ struct SalesView: View {
                 TextField("ID", text: $viewModel.sale.ID)
                 
                 Section{
-                    TextField("NAME", text: $viewModel.sale.Name)
+                    TextField("NAME", text: $viewModel.sale.IdCliente)
                 }
                 Section{
-                    TextField("CANT", text: $viewModel.sale.Amount)
+                    TextField("CANT", text: $viewModel.sale.IdProduct)
                 }
                 Section{
-                    TextField("ID Product", text: $viewModel.sale.IdSale)
+                    TextField("ID Product", text: $viewModel.sale.NameProduct)
                 }
                 Section{
-                    TextField("ID Cliente", text: $viewModel.sale.IdBuy)
+                    TextField("ID Cliente", text: $viewModel.sale.Pieces)
                 }
-                Section{
-                    TextField("PIECES", text: $viewModel.sale.Pieces)
-                }
+                
                 Section{
                     TextField("SUBTOTAL", text: $viewModel.sale.Subtotal)
                 }
@@ -84,7 +82,7 @@ struct SalesView: View {
             Button(action:{
                 
                 //Cambie en este pero no estoy del todo seguro si jale a como estan en las vistas
-                if(viewModel.sale.ID == "" || viewModel.sale.Name == "" || viewModel.sale.Amount == "" || viewModel.sale.IdSale == "" || viewModel.sale.IdBuy == "" || viewModel.sale.Pieces == "" || viewModel.sale.Subtotal == "" || viewModel.sale.Total == ""){
+                if(viewModel.sale.ID == "" || viewModel.sale.IdCliente == "" || viewModel.sale.IdProduct == "" || viewModel.sale.NameProduct == "" || viewModel.sale.Pieces == "" || viewModel.sale.Subtotal == "" || viewModel.sale.Total == ""){
                     showAlert = true
                 }else{
                     //Se ejecuta el CREATE de CRUD

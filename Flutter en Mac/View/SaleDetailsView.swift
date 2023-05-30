@@ -17,8 +17,8 @@ struct SaleDetailsView: View {
             ZStack{
                 Form {
                   Section(header: Text("Sale")) {
-                      Text(sale.Name)
-                      Text(sale.Pieces)
+                      Text(sale.NameProduct)
+                      Text(sale.Total)
                        
                   }
                    
@@ -58,7 +58,7 @@ struct SaleDetailsView: View {
  
 struct SaleDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let sale = Sale(id: "", ID: "", Name: "", Amount: "", IdSale: "", IdBuy: "", Pieces: "", Subtotal: "", Total: "")
+        let sale = Sale(id: "", ID: "", IdCliente: "", IdProduct: "", NameProduct: "", Pieces: "", Subtotal: "", Total: "")
         return
           NavigationView {
             SaleDetailsView(sale: sale)

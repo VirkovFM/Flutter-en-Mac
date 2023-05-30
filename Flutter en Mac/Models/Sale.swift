@@ -4,10 +4,9 @@ import FirebaseFirestoreSwift
 struct Sale: Identifiable, Codable {
     @DocumentID var id: String?
     var ID: String
-    var Name: String
-    var Amount: String
-    var IdSale: String
-    var IdBuy: String
+    var IdCliente: String
+    var IdProduct: String
+    var NameProduct: String
     var Pieces: String
     var Subtotal: String
     var Total: String
@@ -16,10 +15,9 @@ struct Sale: Identifiable, Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case ID
-        case Name
-        case Amount
-        case IdSale
-        case IdBuy
+        case IdCliente
+        case IdProduct
+        case NameProduct
         case Pieces
         case Subtotal
         case Total

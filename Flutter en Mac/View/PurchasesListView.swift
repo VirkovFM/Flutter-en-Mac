@@ -15,9 +15,9 @@ struct PurchasesListView: View {
     private func purchaseRowView(purchase: Purchase) -> some View {
         NavigationLink(destination: PurchaseDetailsView(purchase: purchase)) {
             VStack(alignment: .leading) {
-                Text(purchase.Name)
+                Text(purchase.ID)
                     .font(.headline)
-                Text(purchase.Pieces)
+                Text(purchase.Name)
                     .font(.subheadline)
             }
         }

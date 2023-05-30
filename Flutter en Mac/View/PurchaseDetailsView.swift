@@ -17,13 +17,13 @@ struct PurchaseDetailsView: View {
             ZStack{
                 Form {
                   Section(header: Text("Purchase")) {
+                      Text(purchase.ID)
                       Text(purchase.Name)
-                      Text(purchase.Pieces)
                        
                   }
                    
                   Section(header: Text("Seller ID")) {
-                      Text(purchase.IdAdmin)
+                      Text(purchase.idAdmin)
                   }
                 }.scrollContentBackground(.hidden)
             }
@@ -58,7 +58,7 @@ struct PurchaseDetailsView: View {
  
 struct PurchaseDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let purchase = Purchase(id: "", ID: "", Name: "1", Pieces: "", IdAdmin: "")
+        let purchase = Purchase(id: "", ID: "", IdSale: "1", idAdmin: "", Name: "")
         return
           NavigationView {
             PurchaseDetailsView(purchase: purchase)
