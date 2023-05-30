@@ -26,6 +26,12 @@ struct ProductView: View {
     // DROPDOWN
         let options = ["Masculino", "Femenino"]
             @State private var selectedOption = 0
+    // DROPDOWN CAtegory
+        let optionsCategory = ["Buceo", "Montañismo"]
+            @State private var selectedOptionC = 0
+    // DROPDOWN
+        let optionsType = ["Guantes", "Mangas"]
+            @State private var selectedOptionT = 0
     
     @State private var registerBool = false
     
@@ -75,10 +81,18 @@ struct ProductView: View {
                     TextField("Description", text: $viewModel.product.Description)
                 }
                 Section{
-                    TextField("Category", text: $viewModel.product.Category)
+                    // DROPDOWN ***********************
+                    Picker(selection: $selectedOptionC, label: Text("Category:")) {
+                        ForEach(0..<optionsCategory.count) {
+                            index in
+                            Text(optionsCategory[index])
+                        }
+                    }.pickerStyle(MenuPickerStyle())
+                    // ***************************
                 }
+                
                 // DROPDOWN ***********************
-                Picker(selection: $selectedOption, label: Text("Selecciona un genero")) {
+                Picker(selection: $selectedOption, label: Text("Gender:")) {
                     ForEach(0..<options.count) {
                         index in
                         Text(options[index])
@@ -86,7 +100,16 @@ struct ProductView: View {
                 }.pickerStyle(MenuPickerStyle())
                 // ***************************
                 Section{
-                    TextField("Type", text: $viewModel.product.Types)
+                    Section{
+                        // DROPDOWN ***********************
+                        Picker(selection: $selectedOptionT, label: Text("Type:")) {
+                            ForEach(0..<optionsType.count) {
+                                index in
+                                Text(optionsType[index])
+                            }
+                        }.pickerStyle(MenuPickerStyle())
+                        // ***************************
+                    }
                 }
                 Section{
                     TextField("Units", text: $viewModel.product.Units)
@@ -105,15 +128,12 @@ struct ProductView: View {
                 
             
             Button(action:{
-                //genero
-                if(selectedOption == 0){
-                    viewModel.product.Gender = "Masculino"
-                }
-                else{
-                    viewModel.product.Gender = "Femenino"
-                }
-                
-                if(viewModel.product.ID == "" || viewModel.product.Name == "" || viewModel.product.Description == "" || viewModel.product.Units == "" || viewModel.product.Category == "" || viewModel.product.Gender == "" || viewModel.product.Types == "" || viewModel.product.Units == "" || viewModel.product.Price == ""){
+                //Extraer combobox
+                viewModel.product.Category = optionsCategory[selectedOptionC]
+                viewModel.product.Gender = options[selectedOption]
+                viewModel.product.Types = optionsType[selectedOptionT]
+                //print("",viewModel.product.Category, "",viewModel.product.Gender, "",viewModel.product.Types)
+                if(viewModel.product.ID == "" || viewModel.product.Name == "" || viewModel.product.Description == "" ||  viewModel.product.Units == "" || viewModel.product.Price == ""){
                     
                     mostrarAlertaVacio = true
                 }else{
