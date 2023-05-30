@@ -29,18 +29,8 @@ struct SalesView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
             
-            
-            Text("SALES")
-                .fontWeight(.bold)
-                .font(.system(size: 30))
-                .offset(x: -160, y: 30)
-                .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                .padding(EdgeInsets(top: 0, leading: 55, bottom: 0, trailing: 0))
-        Divider()
-            .background(Color.white)
-            .offset(x: -150 ,y: 15)
-            .frame(width: 200)
-            
+            customtitle(text: "SALES", x: -160, y: 30, width: 200, offX: -150, offY: 15)
+                        
             Button(action: {
                 if (viewModel.sale.ID == ""){
                     mostrarAlertaVacio = true

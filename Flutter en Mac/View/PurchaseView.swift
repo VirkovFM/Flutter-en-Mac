@@ -21,18 +21,8 @@ struct PurchaseView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
             
-            Text("PURCHASE")
-                .fontWeight(.bold)
-                .font(.system(size: 30))
-                .offset(x: -125, y: 90)
-                .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                .padding(EdgeInsets(top: 0, leading: 35, bottom: 0, trailing: 0))
-                
-            Divider()
-                 .background(Color.white)
-                 .frame(width: 300)
-                 .offset(x: -150, y: 70)
-            
+            customtitle(text: "PURCHASE", x: -125, y: 90, width: 300, offX: -150, offY: 70) //leadin 35 y el de users 40
+                        
             Button(action: {
                 if (viewModel.purchase.ID == ""){
                     mostrarAlertaVacio = true

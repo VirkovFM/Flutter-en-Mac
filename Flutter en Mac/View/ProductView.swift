@@ -39,18 +39,7 @@ struct ProductView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
         VStack{
             
-            Text("PRODUCT")
-                .font(.system(size: 30))
-                .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                .fontWeight(.bold)
-                .padding()
-                .offset(x: -140, y: 20)
-                .padding(EdgeInsets(top: 0, leading: 55, bottom: 0, trailing: 0))
-            
-            Divider()
-                .background(Color.white)
-                .frame(width: 220)
-                .offset(x: -140)
+            customtitle(text: "PRODUCT", x: -140, y: 20, width: 220, offX: -140,offY: 0)
                
             Button(action: {
                 if (viewModel.product.ID == ""){

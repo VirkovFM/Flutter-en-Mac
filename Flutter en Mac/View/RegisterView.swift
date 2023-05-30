@@ -55,7 +55,8 @@ struct RegisterView: View {
         ZStack{
             Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.all)
             VStack{
-                customtitle(text: "INTERFACE REGISTER", x: -49, y: 30)
+                
+                customtitle(text: "INTERFACE REGISTER", x: -49, y: 30, width: 350, offX: -39, offY: 10)
                 
                 Button(action: {
                     if (viewModel.user.ID == ""){

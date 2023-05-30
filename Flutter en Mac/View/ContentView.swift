@@ -120,9 +120,12 @@ struct customtitle: View{
     let text: String
     let x: CGFloat
     let y: CGFloat
+    let width: CGFloat
+    let offX: CGFloat
+    let offY: CGFloat
     @State private var fieldValue:String = ""
     var body: some View{
-        Spacer(minLength: 30)
+        //Spacer(minLength: 30)
         
         
         Text(text)
@@ -130,12 +133,12 @@ struct customtitle: View{
             .fontWeight(.bold)
             .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
             .offset(x: x, y: y)
-            .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
+            .padding(EdgeInsets(top: 0, leading: 55, bottom: 0, trailing: 0))
         
         Divider()
             .background(Color.white)
-            .frame(width: 350)
-            .offset(x: -39, y: 10)
+            .frame(width: width)
+            .offset(x: offX, y: offY)
     }
 }
 
