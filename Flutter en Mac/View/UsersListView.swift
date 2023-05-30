@@ -32,18 +32,8 @@ struct UsersListView: View {
                 VStack {
                     Spacer(minLength: 30)
                     
+                    customtitle(text: "USER LIST", x: -130, y: 30, width: 200, offX: -100, offY: 10)
                     
-                    Text("USER LIST")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                        .offset(x:-49, y: 30)
-                        .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
-                    
-                    Divider()
-                        .background(Color.white)
-                        .frame(width: 350)
-                        .offset(x: -39, y: 10)
                     
                     List {
                         ForEach(viewModel.Users) { user in

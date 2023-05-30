@@ -26,7 +26,6 @@
 		F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16E2C4029F743560040FA4D /* Assets.xcassets */; };
 		F16E2C4429F743560040FA4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16E2C4329F743560040FA4D /* Preview Assets.xcassets */; };
 		F16E2C5B29F75B010040FA4D /* MenuAdmin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */; };
-		F17123172A25677A00055250 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F17123162A25677A00055250 /* GoogleService-Info.plist */; };
 		F1D329FB29F7496000536D77 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D329FA29F7496000536D77 /* PurchaseView.swift */; };
 		F62ACD572A19A9000070531A /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ACD562A19A9000070531A /* UsersListView.swift */; };
 		F62ACD5D2A19DB720070531A /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62ACD5C2A19DB720070531A /* UsersViewModel.swift */; };
@@ -43,6 +42,7 @@
 		F64FBD5C2A161E2C000C297B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5B2A161E2C000C297B /* FirebaseAuth */; };
 		F64FBD5E2A161E2C000C297B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5D2A161E2C000C297B /* FirebaseFirestore */; };
 		F64FBD602A161E2C000C297B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F64FBD5F2A161E2C000C297B /* FirebaseFirestoreSwift */; };
+		F6AADE802A26B39B000AA0D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6AADE7F2A26B39B000AA0D7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +66,6 @@
 		F16E2C4029F743560040FA4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F16E2C4329F743560040FA4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F16E2C5A29F75B010040FA4D /* MenuAdmin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAdmin.swift; sourceTree = "<group>"; };
-		F17123162A25677A00055250 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1D329FA29F7496000536D77 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		F62ACD562A19A9000070531A /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		F62ACD5C2A19DB720070531A /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		F62ACD6C2A1A04B00070531A /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 		F62ACD6E2A1A04D40070531A /* SalesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesViewModel.swift; sourceTree = "<group>"; };
 		F62ACD702A1A04F10070531A /* PurchasesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesViewModel.swift; sourceTree = "<group>"; };
+		F6AADE7F2A26B39B000AA0D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +166,7 @@
 		F16E2C3B29F743550040FA4D /* Flutter en Mac */ = {
 			isa = PBXGroup;
 			children = (
-				F17123162A25677A00055250 /* GoogleService-Info.plist */,
+				F6AADE7F2A26B39B000AA0D7 /* GoogleService-Info.plist */,
 				F118B9012A15BF7700CD9151 /* Models */,
 				F118B9022A15BF8300CD9151 /* ViewModels */,
 				F118B9032A15BF9700CD9151 /* View */,
@@ -251,7 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F16E2C4429F743560040FA4D /* Preview Assets.xcassets in Resources */,
-				F17123172A25677A00055250 /* GoogleService-Info.plist in Resources */,
+				F6AADE802A26B39B000AA0D7 /* GoogleService-Info.plist in Resources */,
 				F16E2C4129F743560040FA4D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

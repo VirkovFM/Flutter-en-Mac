@@ -32,18 +32,7 @@ struct SalesListView: View {
                 VStack {
                     Spacer(minLength: 30)
                     
-                    
-                    Text("SALE LIST")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                        .offset(x:-49, y: 30)
-                        .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
-                    
-                    Divider()
-                        .background(Color.white)
-                        .frame(width: 350)
-                        .offset(x: -39, y: 10)
+                    customtitle(text: "SALE LIST", x: -135, y: 30, width: 230, offX: -120, offY: 10)
                     
                     List {
                         ForEach(viewModel.Sales) { sale in

@@ -32,18 +32,7 @@ struct ProductsListView: View {
                 VStack {
                     Spacer(minLength: 30)
                     
-                    
-                    Text("PRODUCT LIST")
-                        .font(.system(size: 30))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
-                        .offset(x:-49, y: 30)
-                        .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 0))
-                    
-                    Divider()
-                        .background(Color.white)
-                        .frame(width: 350)
-                        .offset(x: -39, y: 10)
+                    customtitle(text: "PRODUCT LIST", x: -99, y: 30, width: 260, offX: -67, offY: 10)
                     
                     List {
                         ForEach(viewModel.Products) { product in
