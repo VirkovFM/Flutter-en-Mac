@@ -50,7 +50,7 @@ struct PurchaseView: View {
                     TextField("PIECES", text: $viewModel.purchase.IdSale)
                 }
                 Section{
-                    TextField("IDA", text: $viewModel.purchase.idAdmin)
+                    TextField("IDA", text: $viewModel.purchase.IdAdmin)
                 }
             }
             .padding(.vertical, 150)
@@ -60,7 +60,7 @@ struct PurchaseView: View {
             
             Button(action:{
             
-                if(viewModel.purchase.ID == "" || viewModel.purchase.Name == "" || viewModel.purchase.IdSale == "" || viewModel.purchase.idAdmin == ""){
+                if(viewModel.purchase.ID == "" || viewModel.purchase.Name == "" || viewModel.purchase.IdSale == "" || viewModel.purchase.IdAdmin == ""){
                     mostrarAlertaVacio = true
                     
                 }

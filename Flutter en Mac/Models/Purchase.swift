@@ -5,7 +5,7 @@ struct Purchase: Identifiable, Codable {
     @DocumentID var id: String?
     var ID: String
     var IdSale: String
-    var idAdmin: String
+    var IdAdmin: String
     var Name: String
 
 
@@ -13,7 +13,7 @@ struct Purchase: Identifiable, Codable {
         case id
         case ID
         case IdSale
-        case idAdmin
+        case IdAdmin
         case Name
       }
 }

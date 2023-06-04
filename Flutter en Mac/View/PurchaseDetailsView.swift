@@ -23,7 +23,7 @@ struct PurchaseDetailsView: View {
                   }
                    
                   Section(header: Text("Seller ID")) {
-                      Text(purchase.idAdmin)
+                      Text(purchase.IdAdmin)
                   }
                 }.scrollContentBackground(.hidden)
             }
@@ -58,7 +58,7 @@ struct PurchaseDetailsView: View {
  
 struct PurchaseDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let purchase = Purchase(id: "", ID: "", IdSale: "1", idAdmin: "", Name: "")
+        let purchase = Purchase(id: "", ID: "", IdSale: "1", IdAdmin: "", Name: "")
         return
           NavigationView {
             PurchaseDetailsView(purchase: purchase)
