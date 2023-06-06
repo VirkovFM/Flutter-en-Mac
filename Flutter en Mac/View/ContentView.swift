@@ -43,12 +43,12 @@ struct ContentView: View {
                             Section{
                                 TextField("USER", text: $email)
 
-                                    .foregroundColor(.black)
+                                    
                             }
                             
                             Section{
                                 SecureField("PASSWORD", text: $contrasena)
-                                    .foregroundColor(.black)
+                                    
                                     
                             }
 

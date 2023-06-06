@@ -17,10 +17,9 @@ struct ProductView: View {
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
-    
+    //VARIABLE GLOBAL PARA PARA EL COSTO EXTRA DEPENDIENDO DEL PRODUCTO SELECCIONADO
+    var extra: Int = 0
     /////LO DEL PROFE FIN
-    
-    
     @State private var showAlert = false
     @State private var mostrarAlertaVacio = false //ALERT
     // DROPDOWN
