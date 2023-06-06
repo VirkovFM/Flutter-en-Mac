@@ -54,16 +54,16 @@ struct SalesView: View {
                 TextField("ID", text: $viewModel.sale.ID)
                 
                 Section{
-                    TextField("NAME", text: $viewModel.sale.IdCliente)
+                    TextField("ID Cliente", text: $viewModel.sale.IdCliente)
                 }
                 Section{
-                    TextField("CANT", text: $viewModel.sale.IdProduct)
+                    TextField("ID Product", text: $viewModel.sale.IdProduct)
                 }
                 Section{
-                    TextField("ID Product", text: $viewModel.sale.NameProduct)
+                    TextField("Name Product", text: $viewModel.sale.NameProduct)
                 }
                 Section{
-                    TextField("ID Cliente", text: $viewModel.sale.Pieces)
+                    TextField("Pieces", text: $viewModel.sale.Pieces)
                 }
                 
                 Section{

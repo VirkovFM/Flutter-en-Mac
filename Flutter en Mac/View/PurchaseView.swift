@@ -42,15 +42,15 @@ struct PurchaseView: View {
             }
             
             Form{
-                TextField("ID PRODUCT", text: $viewModel.purchase.ID)
+                TextField("ID", text: $viewModel.purchase.ID)
                 Section{
                     TextField("NAME", text: $viewModel.purchase.Name)
                 }
                 Section{
-                    TextField("PIECES", text: $viewModel.purchase.IdSale)
+                    TextField("ID Sale", text: $viewModel.purchase.IdSale)
                 }
                 Section{
-                    TextField("IDA", text: $viewModel.purchase.IdAdmin)
+                    TextField("ID Admin", text: $viewModel.purchase.IdAdmin)
                 }
             }
             .padding(.vertical, 150)

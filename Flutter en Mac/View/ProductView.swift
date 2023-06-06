@@ -104,7 +104,7 @@ struct ProductView: View {
                     TextField("Units", text: $viewModel.product.Units)
                 }
                 Section{
-                    TextField("Costo", text: $viewModel.product.Price)
+                    TextField("Price", text: $viewModel.product.Price)
                 }
                 
                 

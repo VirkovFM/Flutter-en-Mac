@@ -1,11 +1,6 @@
-//
-//  ContentView.swift
-//  Flutter en Mac
-//
-//  Created by ISSC_611_2023 on 24/04/23.
-//
-
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 enum Mode {
   case new
@@ -65,13 +60,24 @@ struct ContentView: View {
                         //Boton de Login
                         Button(action:{
                             
-                            if(email == "" || contrasena == ""){
+                            /*if(email == "" || contrasena == ""){
                                 //Mpstrar alerta si los campos estan vacios
                                 mostrarAlerta = true
                             }else{
                                 //Se ejecuta el CREATE de CRUD
                                 
                                 MenuBool = true
+                            }*/
+                            
+                            Auth.auth().signIn(withEmail: email, password: contrasena) { (result, error) in
+                                if let error = error {
+                                    // Manejar el error de inicio de sesión
+                                    mostrarAlerta = true
+                                } else {
+                                    // El inicio de sesión fue exitoso, puedes redirigir al usuario a otra pantalla
+                                    // o realizar otras acciones necesarias
+                                    MenuBool = true
+                                }
                             }
                             
                         }) {
@@ -81,7 +87,7 @@ struct ContentView: View {
                         }.buttonStyle(FilledButtonStyle())
                             .offset(y: -160)
                             .alert(isPresented: $mostrarAlerta){
-                            Alert(title: Text("ERROR"), message: Text("Llene todos los campos"))
+                            Alert(title: Text("ERROR"), message: Text("¡Cheque User o Password esten correctamente introducidos!"))
                         }
                         if(MenuBool){
                             NavigationLink(destination: MenuAdmin(), isActive: $MenuBool){
