@@ -127,6 +127,7 @@ struct ProductView: View {
                     mostrarAlertaVacio = true
                 }else{
                     //Se ejecuta el CREATE de CRUD
+                    
                     viewModel.product.TotalFinal = viewModel.product.Price //ASIGNAT TOTAL ESTUPIDO
                     if (mode == .new){
                         viewModel.product.id = viewModel.product.ID
