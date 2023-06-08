@@ -148,10 +148,17 @@ struct customtitle: View{
     }
 }
 
-/*struct titlelight: View{
+struct titlelight: View{
+    let text: String
     
+    var body: some View{
+        Text(text)
+            .fontWeight(.bold)
+            .foregroundColor(Color(red: 0.596, green: 0.694, blue: 0.769))
+            .font(.system(size: 25))
+    }
 }
-*/
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

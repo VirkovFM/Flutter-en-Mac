@@ -16,20 +16,19 @@ struct ProductDetailsView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             ZStack{
                 VStack{
-                    customtitle(text: "Product Name", x: -110, y: 20, width: 0, offX: -140,offY: 0)
                     Form {
                         Section{
+                            titlelight(text: "Product Name")
                             Text(product.Name)
                         }
-                        
-                      Section(header: Text("Product")) {
-                          Text(product.Description)
-                           
-                      }
-                       
-                      Section(header: Text("Price")) {
-                          Text(product.Price)
-                      }
+                        Section{
+                            titlelight(text: "Description")
+                            Text(product.Description)
+                        }
+                        Section{
+                            titlelight(text: "Price")
+                            Text(product.Price)
+                        }
                     }.scrollContentBackground(.hidden)
                 }
             }

@@ -16,15 +16,18 @@ struct UserDetailsView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             ZStack{
                 Form {
-                  Section(header: Text("User")) {
-                      Text(user.Name)
-                      Text(user.LastName)
-                       
-                  }
-                   
-                  Section(header: Text("Email")) {
-                      Text(user.Email)
-                  }
+                    Section{
+                        titlelight(text: "User Name")
+                        Text(user.Name)
+                    }
+                    Section{
+                        titlelight(text: "LastName")
+                        Text(user.LastName)
+                    }
+                    Section{
+                        titlelight(text: "Email")
+                        Text(user.Email)
+                    }
                 }.scrollContentBackground(.hidden) 
             }
       )

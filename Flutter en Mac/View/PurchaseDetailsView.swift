@@ -16,14 +16,10 @@ struct PurchaseDetailsView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             ZStack{
                 Form {
-                  Section(header: Text("Purchase")) {
+                  Section{
+                      titlelight(text: "Purchase")
                       Text(purchase.ID)
                       Text(purchase.Name)
-                       
-                  }
-                   
-                  Section(header: Text("Seller ID")) {
-                      Text(purchase.IdAdmin)
                   }
                 }.scrollContentBackground(.hidden)
             }

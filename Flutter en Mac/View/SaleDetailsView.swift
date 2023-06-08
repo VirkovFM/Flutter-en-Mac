@@ -16,15 +16,18 @@ struct SaleDetailsView: View {
         Color(#colorLiteral(red: 0.224, green: 0.224, blue: 0.224, alpha: 1)).edgesIgnoringSafeArea(.vertical).overlay(
             ZStack{
                 Form {
-                  Section(header: Text("Sale")) {
-                      Text(sale.NameProduct)
-                      Text(sale.Total)
-                       
-                  }
-                   
-                  Section(header: Text("Total")) {
-                      Text(sale.Total)
-                  }
+                    Section{
+                        titlelight(text: "Name Product")
+                        Text(sale.NameProduct)
+                    }
+                    Section{
+                        titlelight(text: "Pieces")
+                        Text(sale.Pieces)
+                    }
+                    Section{
+                        titlelight(text: "Total")
+                        Text(sale.Total)
+                    }
                 }.scrollContentBackground(.hidden)
             }
       )
