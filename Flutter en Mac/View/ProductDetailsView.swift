@@ -28,7 +28,7 @@ struct ProductDetailsView: View {
                       }
                        
                       Section(header: Text("Price")) {
-                          Text(product.Price)
+                          Text(product.TotalFinal)
                       }
                     }.scrollContentBackground(.hidden)
                 }
