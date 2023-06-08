@@ -100,7 +100,7 @@ struct ContentView: View {
                             .fontWeight(.bold)
                         
                         
-                    }.foregroundColor(.white))
+                    }.foregroundColor(.black))
 
             }
             .padding(.top)
