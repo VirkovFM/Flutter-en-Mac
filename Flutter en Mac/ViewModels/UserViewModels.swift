@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import FirebaseFirestore
+import FirebaseAuth
  
 class UserViewModels: ObservableObject {
     
@@ -28,6 +29,20 @@ class UserViewModels: ObservableObject {
     private func addUser(_ user: users) {
         do {
             let _ = try db.collection("users").addDocument(from: user)
+            
+            Auth.auth().createUser(withEmail: user.Email, password: user.Password) { [weak self] authResult, error in
+                guard let self = self else { return }
+                
+                if let error = error {
+                    print("Error al crear el usuario: \(error.localizedDescription)")
+                } else {
+                    print("Usuario creado exitosamente")
+                    
+                    // Actualizar el ID del usuario con el ID proporcionado por Firebase Authentication
+                    self.user.ID = authResult?.user.uid ?? ""
+                    self.updateUser(self.user)
+                }
+            }
         }
         catch {
             print(error)
@@ -73,12 +88,4 @@ class UserViewModels: ObservableObject {
     func handleDeleteTapped() {
       self.removeUser()
     }
-    
-    
-    
-    
-    
-    
-    
-    
 }

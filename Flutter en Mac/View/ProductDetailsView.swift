@@ -27,7 +27,7 @@ struct ProductDetailsView: View {
                         }
                         Section{
                             titlelight(text: "Price")
-                            Text(product.Price)
+                            Text(product.TotalFinal)
                         }
                     }.scrollContentBackground(.hidden)
                 }
@@ -63,7 +63,7 @@ struct ProductDetailsView: View {
  
 struct ProductDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        let product = Product(id: "", ID: "", Name: "x", Description: "", Category: "", Gender: "", Types: "", Units: "", Price: "", TotalFinal: "")
+        let product = Product(id: "", ID: "", Name: "", Description: "", Category: "", Gender: "", Types: "", Units: "", Price: "", TotalFinal: "")
         return
           NavigationView {
             ProductDetailsView(product: product)
